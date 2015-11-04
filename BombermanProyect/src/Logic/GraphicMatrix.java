@@ -14,15 +14,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
-public class matrizGraficaMedia extends javax.swing.JFrame implements KeyListener{
+public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     private JPanel  panel;
     private GridBagConstraints gbc;
     private int x;
     private int y;
-    JLabel [][] matriz = new JLabel[15][15];
+    JLabel [][] matrix = new JLabel[15][15];
     
     
-    public matrizGraficaMedia() {
+    public GraphicMatrix() {
         addKeyListener(this);
         int num = 25;
         int cont = 0;
@@ -31,7 +31,7 @@ public class matrizGraficaMedia extends javax.swing.JFrame implements KeyListene
         this.panel.setLayout(new GridBagLayout());
         this.gbc=new GridBagConstraints();
         
-        Globals globales = Globals.getInstance();
+        Globals globals = Globals.getInstance();
         
        /**
         * Ciclos para crear la matriz
@@ -42,9 +42,9 @@ public class matrizGraficaMedia extends javax.swing.JFrame implements KeyListene
 
                 lbl.setBounds(x*num, y*num, num, num);
                 lbl.setIcon(setIcon(num,"/Images/bloque.png"));
-                matriz[x][y] = lbl;
-                globales.getGbc().gridx = x*num;
-                //globales.getGbc().gridy = y*num;
+                matrix[x][y] = lbl;
+                globals.getGbc().gridx = x*num;
+                //globals.getGbc().gridy = y*num;
                 //this.gbc.gridx=x*num;
                 this.gbc.gridy=y*num;
                 //globales.getPanel().add(lbl,this.gbc);
@@ -54,19 +54,19 @@ public class matrizGraficaMedia extends javax.swing.JFrame implements KeyListene
 
                 if(((x%2)!=0) ||((y%2)!=0)){
 
-                    matriz[x][y].setIcon(setIcon(num,"/Images/bloqueVacio.png"));
+                    matrix[x][y].setIcon(setIcon(num,"/Images/bloqueVacio.png"));
                 }
             }            
         }
         
         /*
-        *Este ciclo es para pintar la pared de arriba y de abajo de la matriz
+        *Este ciclo es para pintar la pared de arriba y de abajo de la matrix
         */
-        for(int x =0;x<matriz.length;x++){
-            matriz[0][x].setIcon(setIcon(num,"/Images/bloque.png"));
-            matriz[14][x].setIcon(setIcon(num,"/Images/bloque.png"));
-            matriz[x][0].setIcon(setIcon(num,"/Images/bloque.png"));
-            matriz[x][14].setIcon(setIcon(num,"/Images/bloque.png"));
+        for(int x =0;x<matrix.length;x++){
+            matrix[0][x].setIcon(setIcon(num,"/Images/bloque.png"));
+            matrix[14][x].setIcon(setIcon(num,"/Images/bloque.png"));
+            matrix[x][0].setIcon(setIcon(num,"/Images/bloque.png"));
+            matrix[x][14].setIcon(setIcon(num,"/Images/bloque.png"));
         }
      
         this.getContentPane().add(panel,BorderLayout.NORTH);

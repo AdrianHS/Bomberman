@@ -10,10 +10,10 @@ package Logic;
  *
  * @author _ADRIAN_
  */
-public class globo extends Element{
+public class EnemyBalloon extends Element{
 
-    public globo(int cantidad, int ID) {
-        super(cantidad, ID);
+    public EnemyBalloon() {
+        super(534);
     }
     
 }

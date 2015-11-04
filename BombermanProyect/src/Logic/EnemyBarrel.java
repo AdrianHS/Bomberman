@@ -10,10 +10,10 @@ package Logic;
  *
  * @author _ADRIAN_
  */
-public class bloqueBarrera extends Element{
+public class EnemyBarrel extends Element{
 
-    public bloqueBarrera(int cantidad, int ID) {
-        super(cantidad, ID);
+    public EnemyBarrel() {
+        super(4354);
     }
     
 }

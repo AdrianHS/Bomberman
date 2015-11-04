@@ -10,10 +10,10 @@ package Logic;
  *
  * @author _ADRIAN_
  */
-public class bomba extends Element {
+public class Bomb extends Element {
 
-    public bomba(int cantidad, int ID) {
-        super(cantidad, ID);
+    public Bomb() {
+        super(87);
     }
     
 }

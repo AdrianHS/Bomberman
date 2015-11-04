@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+//Ultima modificacion: 3/11/15  ---  21:48
 package bombermanproyect;
 
 import javax.swing.JFrame;

@@ -19,11 +19,16 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        matrizGraficaMedia b = new matrizGraficaMedia();
+       /* matrizGraficaMedia b = new matrizGraficaMedia();
         b.setSize(648, 667);
         b.setLocationRelativeTo(null);
         b.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         b.setVisible(true);
+        */
+        crearMatriz c = new crearMatriz();
+        c.matriz();
+        
+        
     }
     
 }

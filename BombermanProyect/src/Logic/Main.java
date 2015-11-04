@@ -19,15 +19,16 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*GraphicMatrix b = new GraphicMatrix();
+        
+        
+        MapCreator c = new MapCreator();
+        c.LogicMatrix(21,75);
+         
+       GraphicMatrix b = new GraphicMatrix(c.getMatrix(),21);
         b.setSize(648, 667);
         b.setLocationRelativeTo(null);
         b.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         b.setVisible(true);
-        */
-        MapCreator c = new MapCreator();
-        c.LogicMatrix(21);
-        
         
     }
     

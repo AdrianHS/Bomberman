@@ -24,7 +24,7 @@ public class matrizGraficaMedia extends javax.swing.JFrame implements KeyListene
     
     public matrizGraficaMedia() {
         addKeyListener(this);
-        int num = 30;
+        int num = 25;
         int cont = 0;
         this.pack();
         this.panel = new JPanel();

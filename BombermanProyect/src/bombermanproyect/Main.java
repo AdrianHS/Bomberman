@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 //Ultima modificacion: 3/11/15  ---  21:54
-//Hola como esta
+//Hola como esta...
 package bombermanproyect;
 
 import javax.swing.JFrame;

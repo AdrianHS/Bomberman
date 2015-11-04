@@ -5,7 +5,7 @@
  */
 //Ultima modificacion: 3/11/15  ---  21:54
 
-package bombermanproyect;
+package Logic;
 
 import javax.swing.JFrame;
 

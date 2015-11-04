@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package bombermanproyect;
+package Logic;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

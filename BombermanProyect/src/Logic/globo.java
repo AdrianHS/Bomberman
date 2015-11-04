@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 
-package bombermanproyect;
+package Logic;
 
 /**
  *
  * @author _ADRIAN_
  */
-public class bloqueBarrera extends Element{
+public class globo extends Element{
 
-    public bloqueBarrera(int cantidad, int ID) {
+    public globo(int cantidad, int ID) {
         super(cantidad, ID);
     }
     

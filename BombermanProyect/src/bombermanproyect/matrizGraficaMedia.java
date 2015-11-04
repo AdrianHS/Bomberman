@@ -19,7 +19,7 @@ public class matrizGraficaMedia extends javax.swing.JFrame implements KeyListene
     private GridBagConstraints gbc;
     private int x;
     private int y;
-    JLabel [][] matriz = new JLabel[21][21];
+    JLabel [][] matriz = new JLabel[25][25];
     
     
     public matrizGraficaMedia() {
@@ -36,8 +36,8 @@ public class matrizGraficaMedia extends javax.swing.JFrame implements KeyListene
        /**
         * Ciclos para crear la matriz
         */
-        for (int y = 0; y < 21; y++) {
-            for (int x = 0; x < 21; x++) {
+        for (int y = 0; y < 25; y++) {
+            for (int x = 0; x < 25; x++) {
                 JLabel lbl = new JLabel();
 
                 lbl.setBounds(x*num, y*num, num, num);
@@ -52,7 +52,7 @@ public class matrizGraficaMedia extends javax.swing.JFrame implements KeyListene
 
                 //getContentPane().add(lbl);
 
-                if(((x%2)!=0) ||((y%2)!=0) && x!=0 && y!=0 && x!=20 && y!= 20){
+                if(((x%2)!=0) ||((y%2)!=0)){
 
                     matriz[x][y].setIcon(setIcon(num,"/Imagenes/bloqueVacio.png"));
                 }
@@ -64,9 +64,9 @@ public class matrizGraficaMedia extends javax.swing.JFrame implements KeyListene
         */
         for(int x =0;x<matriz.length;x++){
             matriz[0][x].setIcon(setIcon(num,"/Imagenes/bloque.png"));
-            matriz[20][x].setIcon(setIcon(num,"/Imagenes/bloque.png"));
+            matriz[24][x].setIcon(setIcon(num,"/Imagenes/bloque.png"));
             matriz[x][0].setIcon(setIcon(num,"/Imagenes/bloque.png"));
-            matriz[x][20].setIcon(setIcon(num,"/Imagenes/bloque.png"));
+            matriz[x][24].setIcon(setIcon(num,"/Imagenes/bloque.png"));
         }
      
         this.getContentPane().add(panel,BorderLayout.NORTH);

@@ -83,36 +83,51 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     public void keyTyped(KeyEvent ke) {
         
     }
-
+    int Q =1;
+    int W =1;
     @Override
     public void keyPressed(KeyEvent ke) {
         
         System.out.println(ke.getKeyCode());
-        
+
         if(ke.getKeyCode()==32)    //espacio
         {
-            JOptionPane.showMessageDialog(this, "Presionó espacio");
-           
+            //JOptionPane.showMessageDialog(this, "Presionó espacio");
+            matrix[Q][W].setIcon(setIcon(25,"/Images/bomba.png"));
+            W++;
+            matrix[Q][W].setIcon(setIcon(25,"/Images/bomba.png"));
         }
         
         if(ke.getKeyCode()==37)
         {
-            JOptionPane.showMessageDialog(this, "Presionó izquierda");
+            //JOptionPane.showMessageDialog(this, "Presionó izquierda");
+            matrix[Q][W].setIcon(setIcon(25,"/Images/bloqueVacio.png"));
+            Q--;
+            matrix[Q][W].setIcon(setIcon(25,"/Images/esqueleto.png"));
         }
         
         if(ke.getKeyCode()==40)
         {
-            JOptionPane.showMessageDialog(this, "Presionó abajo");
+            //JOptionPane.showMessageDialog(this, "Presionó abajo");
+            matrix[Q][W].setIcon(setIcon(25,"/Images/bloqueVacio.png"));
+            W++;
+            matrix[Q][W].setIcon(setIcon(25,"/Images/esqueleto.png"));
         }
         
         if(ke.getKeyCode()==39)
         {
-            JOptionPane.showMessageDialog(this, "Presionó derecha");
+            matrix[Q][W].setIcon(setIcon(25,"/Images/bloqueVacio.png"));
+            Q++;
+            matrix[Q][W].setIcon(setIcon(25,"/Images/esqueleto.png"));
+            //JOptionPane.showMessageDialog(this, "Presionó derecha");
         }
         
         if(ke.getKeyCode()==38)
         {
-            JOptionPane.showMessageDialog(this, "Presionó arriba");
+            matrix[Q][W].setIcon(setIcon(25,"/Images/bloqueVacio.png"));
+            W--;
+            matrix[Q][W].setIcon(setIcon(25,"/Images/esqueleto.png"));
+            //JOptionPane.showMessageDialog(this, "Presionó arriba");
         }
         
         

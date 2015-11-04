@@ -14,18 +14,16 @@ import java.util.Random;
  */
 public class MapCreator {
     
-    private int x;
-    private int y;
     Element [][] matrix;
 
     public MapCreator() {
     }
-    SolidBloc bloc = new SolidBloc();
+    
    
     
     public void LogicMatrix(int size, int blocQ){ 
         matrix = new Element[size][size];
-        
+        SolidBloc bloc = new SolidBloc();
         //Fill all in SolidBlocs
         for (int x=0; x < size; x++) {
             for (int y=0; y < size; y++) {
@@ -68,16 +66,10 @@ public class MapCreator {
                 matrix[q][w]= new BarrierBloc();
                 cont--; 
             
-                }
-                
-            
+                }                   
             
         }
-        
-        
-        
-        
-        
+   
         //Print all
         for(int x =0;x<size;x++){
             for(int y =0;y<size;y++){
@@ -110,6 +102,12 @@ public class MapCreator {
         System.out.println(asd);
         
     }   
+
+    public Element[][] getMatrix() {
+        return matrix;
+    }
+    
+    
     
         
 }

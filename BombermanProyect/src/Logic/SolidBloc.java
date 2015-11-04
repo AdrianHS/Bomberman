@@ -10,10 +10,10 @@ package Logic;
  *
  * @author _ADRIAN_
  */
-public class bloque extends Element{
+public class SolidBloc extends Element{
 
-    public bloque(int cantidad, int ID) {
-        super(cantidad, ID);
+    public SolidBloc() {
+        super(1);
     }
     
 }

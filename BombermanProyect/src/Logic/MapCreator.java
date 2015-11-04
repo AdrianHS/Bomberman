@@ -10,44 +10,43 @@ package Logic;
  *
  * @author _ADRIAN_
  */
-public class crearMatriz {
+public class MapCreator {
     
     private int x;
     private int y;
-    int matriz[][] = new int[15][15];
-    Element [][] matri = new Element[25][25];
+    Element [][] matrix;
 
-    public crearMatriz() {
+    public MapCreator() {
     }
-    bloque bloc = new bloque(1, 1);
-    espacioVacio espV = new espacioVacio(1, 2);
+    SolidBloc bloc = new SolidBloc();
+    Blank blank = new Blank();
     
-    public void matriz(){
-        for (int x=0; x < 25; x++) {
-            for (int y=0; y < 25; y++) {
-                //System.out.println (matriz[x][y]);
+    public void LogicMatrix(int size){ 
+        matrix = new Element[size][size];
+        for (int x=0; x < size; x++) {
+            for (int y=0; y < size; y++) {
+                //System.out.println (matriz[x][y]);             
                 
-                
-                matri[x][y] = bloc;
+                matrix[x][y] = bloc;
                 
                 if(((x%2)!=0) ||((y%2)!=0)){
 
-                    matri[x][y]=espV;
+                    matrix[x][y]=blank;
                 }
             }
             
             
         }
-        for(int x =0;x<matri.length;x++){
-            matri[0][x]=bloc;
-            matri[24][x]=bloc;
-            matri[x][0]=bloc;
-            matri[x][24]=bloc;
+        for(int x =0;x<size;x++){
+            matrix[0][x]=bloc;
+            matrix[size-1][x]=bloc;
+            matrix[x][0]=bloc;
+            matrix[x][size-1]=bloc;
         }
         
-        for(int x =0;x<25;x++){
-            for(int y =0;y<25;y++){
-                if (matri[x][y].ID==1){
+        for(int x =0;x<size;x++){
+            for(int y =0;y<size;y++){
+                if (matrix[x][y].ID==1){
                     System.out.print("▓");
                     
                 }

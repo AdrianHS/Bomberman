@@ -12,8 +12,8 @@ package Logic;
  */
 public class Heroe extends Element{
 
-    public Heroe(int cantidad, int ID) {
-        super(cantidad, ID);
+    public Heroe() {
+        super(789);
     }
     
 }

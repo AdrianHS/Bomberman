@@ -10,10 +10,10 @@ package Logic;
  *
  * @author _ADRIAN_
  */
-public class espacioVacio extends Element{
+public class Blank extends Element{
 
-    public espacioVacio(int cantidad, int ID) {
-        super(cantidad, ID);
+    public Blank() {
+        super(2);
     }
     
 }

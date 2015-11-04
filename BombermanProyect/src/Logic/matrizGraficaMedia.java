@@ -31,7 +31,7 @@ public class matrizGraficaMedia extends javax.swing.JFrame implements KeyListene
         this.panel.setLayout(new GridBagLayout());
         this.gbc=new GridBagConstraints();
         
-        Globales globales = Globales.getInstance();
+        Globals globales = Globals.getInstance();
         
        /**
         * Ciclos para crear la matriz

@@ -14,18 +14,18 @@ import javax.swing.JPanel;
  *
  * @author _ADRIAN_
  */
-public class Globales {
-    public static Globales instance;
+public class Globals {
+    public static Globals instance;
     private JPanel  panel;
     private GridBagConstraints gbc;
     
 
-    public Globales() {
+    public Globals() {
     }
     
-    public static Globales getInstance(){
+    public static Globals getInstance(){
         if(instance == null){
-            instance = new Globales();
+            instance = new Globals();
             instance.gbc = new GridBagConstraints();
             instance.panel = new JPanel();  
         }

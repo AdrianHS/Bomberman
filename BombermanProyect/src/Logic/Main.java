@@ -25,8 +25,8 @@ public class Main {
         b.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         b.setVisible(true);
         */
-        crearMatriz c = new crearMatriz();
-        c.matriz();
+        MapCreator c = new MapCreator();
+        c.LogicMatrix(21);
         
         
     }

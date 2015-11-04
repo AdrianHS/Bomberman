@@ -11,20 +11,10 @@ package Logic;
  * @author _ADRIAN_
  */
 public class Element {
-    int cantidad;
     int ID;
 
-    public Element(int cantidad, int ID) {
-        this.cantidad = cantidad;
+    public Element(int ID) {   
         this.ID = ID;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
     }
 
     public int getID() {

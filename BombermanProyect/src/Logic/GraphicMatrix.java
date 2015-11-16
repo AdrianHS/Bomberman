@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     private JPanel  panel;
     private GridBagConstraints gbc;
-    int num = 25;
+    Globals globals = Globals.getInstance();
     JLabel [][] matrix; 
     
     
@@ -31,7 +31,7 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         this.panel.setLayout(new GridBagLayout());
         this.gbc=new GridBagConstraints();
         
-        Globals globals = Globals.getInstance();
+        
         
        /**
         * Ciclos para crear la matriz
@@ -40,21 +40,21 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
             for (int x = 0; x < size; x++) {
                 JLabel lbl = new JLabel();
 
-                lbl.setBounds(x*num, y*num, num, num);
-                lbl.setIcon(setIcon(num,"/Images/bloque.png"));
+                lbl.setBounds(x*globals.getNum2(), y*globals.getNum2(), globals.getNum2(), globals.getNum2());
+                lbl.setIcon(setIcon(globals.getNum2(),"/Images/bloque.png"));
                 matrix[x][y] = lbl;
-                globals.getGbc().gridx = x*num;
+                globals.getGbc().gridx = x*globals.getNum2();
                 //globals.getGbc().gridy = y*num;
                 //this.gbc.gridx=x*num;
-                this.gbc.gridy=y*num;
+                this.gbc.gridy=y*globals.getNum2();
                 //globales.getPanel().add(lbl,this.gbc);
-                this.panel.add(lbl,this.gbc);
+                //this.panel.add(lbl,this.gbc);
 
-                //getContentPane().add(lbl);
+                getContentPane().add(lbl);
 
                 if(((x%2)!=0) ||((y%2)!=0)){
 
-                    matrix[x][y].setIcon(setIcon(num,"/Images/bloqueVacio.png"));
+                    matrix[x][y].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
                 }
             }            
         }
@@ -63,10 +63,10 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         *Este ciclo es para pintar la pared de arriba y de abajo de la matrix
         */
         for(int x =0;x<size;x++){
-            matrix[0][x].setIcon(setIcon(num,"/Images/bloque.png"));
-            matrix[size-1][x].setIcon(setIcon(num,"/Images/bloque.png"));
-            matrix[x][0].setIcon(setIcon(num,"/Images/bloque.png"));
-            matrix[x][size-1].setIcon(setIcon(num,"/Images/bloque.png"));
+            matrix[0][x].setIcon(setIcon(globals.getNum2(),"/Images/bloque.png"));
+            matrix[size-1][x].setIcon(setIcon(globals.getNum2(),"/Images/bloque.png"));
+            matrix[x][0].setIcon(setIcon(globals.getNum2(),"/Images/bloque.png"));
+            matrix[x][size-1].setIcon(setIcon(globals.getNum2(),"/Images/bloque.png"));
         }
      
         this.getContentPane().add(panel,BorderLayout.NORTH);
@@ -74,10 +74,10 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
        for (int y = 0; y < size; y++) {
             for (int x = 0; x < size; x++) {
                 if(map[x][y].ID==3){
-                    matrix[y][x].setIcon(setIcon(num,"/Images/BarrierBloc.png"));
+                    matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/BarrierBloc.png"));
                 }
                 else if(map[x][y].ID==4){
-                    matrix[y][x].setIcon(setIcon(num,"/Images/Hero1.png"));
+                    matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
                 }
             }            
         } 
@@ -115,41 +115,41 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         if(ke.getKeyCode()==32)    
         {
             //JOptionPane.showMessageDialog(this, "Presionó espacio");
-            matrix[Q][W].setIcon(setIcon(num,"/Images/BombAndHero1.png"));
+            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/BombAndHero1.png"));
           
-            matrix[Q][W].setIcon(setIcon(num,"/Images/BombAndHero1.png"));
+            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/BombAndHero1.png"));
         }
         
         if(ke.getKeyCode()==37)
         {
             
             //JOptionPane.showMessageDialog(this, "Presionó izquierda");
-            matrix[Q][W].setIcon(setIcon(num,"/Images/bloqueVacio.png"));
+            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
             Q--;
-            matrix[Q][W].setIcon(setIcon(num,"/Images/Hero1.png"));
+            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
             
         }
         if(ke.getKeyCode()==40)
         {
             //JOptionPane.showMessageDialog(this, "Presionó abajo");
-            matrix[Q][W].setIcon(setIcon(num,"/Images/bloqueVacio.png"));
+            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
             W++;
-            matrix[Q][W].setIcon(setIcon(num,"/Images/Hero1.png"));
+            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
         }
         
         if(ke.getKeyCode()==39)
         {
-            matrix[Q][W].setIcon(setIcon(num,"/Images/bloqueVacio.png"));
+            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
             Q++;
-            matrix[Q][W].setIcon(setIcon(num,"/Images/Hero1.png"));
+            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
             //JOptionPane.showMessageDialog(this, "Presionó derecha");
         }
         
         if(ke.getKeyCode()==38)
         {
-            matrix[Q][W].setIcon(setIcon(num,"/Images/bloqueVacio.png"));
+            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
             W--;
-            matrix[Q][W].setIcon(setIcon(num,"/Images/Hero1.png"));
+            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
             //JOptionPane.showMessageDialog(this, "Presionó arriba");
         }
         

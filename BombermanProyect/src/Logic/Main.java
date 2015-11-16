@@ -20,16 +20,21 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        
-        MapCreator c = new MapCreator();
-        c.LogicMatrix(21,75);
+        /*
+        MapCreator logicMap = new MapCreator();
+        logicMap.LogicMatrix(25,175);
          
-       GraphicMatrix b = new GraphicMatrix(c.getMatrix(),21);
+        GraphicMatrix b = new GraphicMatrix(logicMap.getMatrix(),25);
         b.setSize(648, 667);
         b.setLocationRelativeTo(null);
         b.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         b.setVisible(true);
-        
+
+        */
+
+        Game game = new Game();
+       
+        System.out.println("Hoooola");
     }
     
 }

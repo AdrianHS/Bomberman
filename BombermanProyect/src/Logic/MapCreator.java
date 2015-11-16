@@ -69,6 +69,17 @@ public class MapCreator {
                 }                   
             
         }
+        
+        matrix[1][1].ID = 2;
+        matrix[1][2].ID = 2;
+        matrix[2][1].ID = 2;
+        
+        //Hero on his place
+        Hero hero = new Hero();
+        matrix[1][1] = hero;
+        
+        
+        
    
         //Print all
         for(int x =0;x<size;x++){
@@ -76,12 +87,15 @@ public class MapCreator {
                 if (matrix[x][y].ID==1){
                     System.out.print("▓");          
                 }
-                else if(matrix[x][y].ID==2 || matrix[x][y].ID==-1){
+                else if(matrix[x][y].ID==2){ //|| matrix[x][y].ID==-1
                     System.out.print("░");
                 }
-                else{
+                else if(matrix[x][y].ID==3 ){
                     System.out.print("▒");
                 }              
+                else if (matrix[x][y].ID==4 ){
+                    System.out.print("♂");
+                }
             }       
             System.out.println("\n");
             

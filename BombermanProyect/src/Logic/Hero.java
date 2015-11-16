@@ -10,10 +10,10 @@ package Logic;
  *
  * @author _ADRIAN_
  */
-public class Heroe extends Element{
+public class Hero extends Element{
 
-    public Heroe() {
-        super(789);
+    public Hero() {
+        super(4);
     }
     
 }

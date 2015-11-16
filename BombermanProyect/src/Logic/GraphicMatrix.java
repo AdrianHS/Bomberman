@@ -10,22 +10,22 @@ import java.awt.event.KeyListener;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
 public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     private JPanel  panel;
     private GridBagConstraints gbc;
-
+    int num = 25;
     JLabel [][] matrix; 
     
     
     public GraphicMatrix(Element map [][],int size) {
         matrix = new JLabel[size][size];
+        
         addKeyListener(this);
-        int num = 25;
-        int cont = 0;
+        
         this.pack();
         this.panel = new JPanel();
         this.panel.setLayout(new GridBagLayout());
@@ -76,14 +76,30 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
                 if(map[x][y].ID==3){
                     matrix[y][x].setIcon(setIcon(num,"/Images/BarrierBloc.png"));
                 }
-                
+                else if(map[x][y].ID==4){
+                    matrix[y][x].setIcon(setIcon(num,"/Images/Hero1.png"));
+                }
             }            
         } 
-        
-
-
-      
     }
+
+    public JLabel[][] getMatrix() {
+        return matrix;
+    }
+
+    public JPanel getPanel() {
+        return panel;
+    }
+
+    public void setPanel(JPanel panel) {
+        this.panel = panel;
+    }
+
+    public void setMatrix(JLabel[][] matrix) {
+        this.matrix = matrix;
+    }
+
+    
     
     @Override
     public void keyTyped(KeyEvent ke) {
@@ -99,48 +115,51 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         if(ke.getKeyCode()==32)    
         {
             //JOptionPane.showMessageDialog(this, "Presionó espacio");
-            matrix[Q][W].setIcon(setIcon(25,"/Images/BombAndHero1.png"));
+            matrix[Q][W].setIcon(setIcon(num,"/Images/BombAndHero1.png"));
           
-            matrix[Q][W].setIcon(setIcon(25,"/Images/BombAndHero1.png"));
+            matrix[Q][W].setIcon(setIcon(num,"/Images/BombAndHero1.png"));
         }
         
         if(ke.getKeyCode()==37)
         {
+            
             //JOptionPane.showMessageDialog(this, "Presionó izquierda");
-            matrix[Q][W].setIcon(setIcon(25,"/Images/bloqueVacio.png"));
+            matrix[Q][W].setIcon(setIcon(num,"/Images/bloqueVacio.png"));
             Q--;
-            matrix[Q][W].setIcon(setIcon(25,"/Images/Hero1.png"));
+            matrix[Q][W].setIcon(setIcon(num,"/Images/Hero1.png"));
+            
         }
-        
         if(ke.getKeyCode()==40)
         {
             //JOptionPane.showMessageDialog(this, "Presionó abajo");
-            matrix[Q][W].setIcon(setIcon(25,"/Images/bloqueVacio.png"));
+            matrix[Q][W].setIcon(setIcon(num,"/Images/bloqueVacio.png"));
             W++;
-            matrix[Q][W].setIcon(setIcon(25,"/Images/Hero1.png"));
+            matrix[Q][W].setIcon(setIcon(num,"/Images/Hero1.png"));
         }
         
         if(ke.getKeyCode()==39)
         {
-            matrix[Q][W].setIcon(setIcon(25,"/Images/bloqueVacio.png"));
+            matrix[Q][W].setIcon(setIcon(num,"/Images/bloqueVacio.png"));
             Q++;
-            matrix[Q][W].setIcon(setIcon(25,"/Images/Hero1.png"));
+            matrix[Q][W].setIcon(setIcon(num,"/Images/Hero1.png"));
             //JOptionPane.showMessageDialog(this, "Presionó derecha");
         }
         
         if(ke.getKeyCode()==38)
         {
-            matrix[Q][W].setIcon(setIcon(25,"/Images/bloqueVacio.png"));
+            matrix[Q][W].setIcon(setIcon(num,"/Images/bloqueVacio.png"));
             W--;
-            matrix[Q][W].setIcon(setIcon(25,"/Images/Hero1.png"));
+            matrix[Q][W].setIcon(setIcon(num,"/Images/Hero1.png"));
             //JOptionPane.showMessageDialog(this, "Presionó arriba");
         }
         
         
     }
-    
- 
 
+  
+     
+    
+    
     @Override
     public void keyReleased(KeyEvent ke) {
         
@@ -152,5 +171,5 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     ImageIcon tempIcon = new ImageIcon(icon.getImage().getScaledInstance(scale, -1, Image.SCALE_DEFAULT));
     return tempIcon;
     }
-
+    
 }

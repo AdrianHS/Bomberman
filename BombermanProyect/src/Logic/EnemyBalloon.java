@@ -13,7 +13,7 @@ package Logic;
 public class EnemyBalloon extends Element{
 
     public EnemyBalloon() {
-        super(534);
+        super(5);
     }
     
 }

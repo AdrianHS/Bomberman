@@ -13,7 +13,7 @@ package Logic;
 public class EnemyBarrel extends Element{
 
     public EnemyBarrel() {
-        super(4354);
+        super(6);
     }
     
 }

@@ -33,7 +33,7 @@ public class Game {//extends javax.swing.JFrame implements KeyListener{
         
         //addKeyListener(this);
         logicMap = new MapCreator();
-        logicMap.LogicMatrix(25,175);
+        logicMap.LogicMatrix(25,175,12,10);
         b = new GraphicMatrix(logicMap,25); 
         b.setSize(648, 667);
         b.setLocationRelativeTo(null);

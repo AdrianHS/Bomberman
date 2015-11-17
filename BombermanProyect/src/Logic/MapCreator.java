@@ -6,6 +6,7 @@
 
 package Logic;
 
+import com.sun.media.sound.EmergencySoundbank;
 import java.util.Random;
 
 /**
@@ -21,7 +22,7 @@ public class MapCreator {
     
    
     
-    public void LogicMatrix(int size, int blocQ){ 
+    public void LogicMatrix(int size, int blocQ,int ballons,int barrels){ 
         this.size=size;
         matrix = new Element[size][size];
         SolidBloc bloc = new SolidBloc();
@@ -59,12 +60,47 @@ public class MapCreator {
             Random r2 = new Random();
             int q = r1.nextInt(size);
             int w = r2.nextInt(size);
-            System.out.println(q+" "+w);
+            //System.out.println(q+" "+w);
             
             
             if(matrix[q][w].ID == 2 && matrix[q][w].ID != -1){
                 
                 matrix[q][w]= new BarrierBloc();
+                cont--; 
+            
+                }                   
+            
+        }
+        
+        //Put the ballons
+        for(int cont = ballons; cont != 0;){
+            Random r1 = new Random();
+            Random r2 = new Random();
+            int q = r1.nextInt(size);
+            int w = r2.nextInt(size);
+            //System.out.println(q+" "+w);
+            
+            
+            if(matrix[q][w].ID == 2 && matrix[q][w].ID != -1){
+                
+                matrix[q][w]= new EnemyBalloon();
+                cont--; 
+            
+                }                   
+            
+        }
+        //Put the barrels
+        for(int cont = barrels; cont != 0;){
+            Random r1 = new Random();
+            Random r2 = new Random();
+            int q = r1.nextInt(size);
+            int w = r2.nextInt(size);
+            //System.out.println(q+" "+w);
+            
+            
+            if(matrix[q][w].ID == 2 && matrix[q][w].ID != -1){
+                
+                matrix[q][w]= new EnemyBarrel();
                 cont--; 
             
                 }                   
@@ -82,8 +118,8 @@ public class MapCreator {
        
         
         
+        printAll();
         
-    
         int asd = 0;
         for (int x=0; x < size; x++) {
             for (int y=0; y < size; y++) {
@@ -128,6 +164,12 @@ public class MapCreator {
                 }              
                 else if (matrix[x][y].ID==4 ){
                     System.out.print("♂");
+                }
+                else if (matrix[x][y].ID==5 ){
+                    System.out.print("○");
+                }
+                else if (matrix[x][y].ID==6 ){
+                    System.out.print("♀");
                 }
             }       
             System.out.println("\n");

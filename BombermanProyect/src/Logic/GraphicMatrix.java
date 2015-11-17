@@ -83,6 +83,12 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
                 else if(this.map.getMatrix()[x][y].ID==4){
                     matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
                 }
+                else if(this.map.getMatrix()[x][y].ID==5){
+                    matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/globo.png"));
+                }
+                else if(this.map.getMatrix()[x][y].ID==6){
+                    matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/barrilToxico.png"));
+                }
             }            
         } 
     }

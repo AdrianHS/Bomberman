@@ -51,9 +51,9 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
                 //this.gbc.gridx=x*num;
                 this.gbc.gridy=y*globals.getNum2();
                 //globales.getPanel().add(lbl,this.gbc);
-                //this.panel.add(lbl,this.gbc);
+                this.panel.add(lbl,this.gbc);
 
-                getContentPane().add(lbl);
+                //getContentPane().add(lbl);
 
                 if(((x%2)!=0) ||((y%2)!=0)){
 
@@ -70,6 +70,7 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
             matrix[size-1][x].setIcon(setIcon(globals.getNum2(),"/Images/bloque.png"));
             matrix[x][0].setIcon(setIcon(globals.getNum2(),"/Images/bloque.png"));
             matrix[x][size-1].setIcon(setIcon(globals.getNum2(),"/Images/bloque.png"));
+            
         }
      
         this.getContentPane().add(panel,BorderLayout.NORTH);
@@ -113,14 +114,31 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     @Override
     public void keyPressed(KeyEvent ke) {
         
-        System.out.println(ke.getKeyCode());
-
+        //System.out.println(ke.getKeyCode());
+        
+        //Space
         if(ke.getKeyCode()==32)    
         {
             //JOptionPane.showMessageDialog(this, "Presionó espacio");
             matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/BombAndHero1.png"));
-          
             matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/BombAndHero1.png"));
+            if(map.getMatrix()[W][Q+1].ID==3){
+                matrix[Q+1][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
+                map.getMatrix()[W][Q+1]=new Blank();
+            }
+            if(map.getMatrix()[W][Q-1].ID==3){
+                matrix[Q-1][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
+                map.getMatrix()[W][Q-1]=new Blank();
+            }
+            if(map.getMatrix()[W-1][Q].ID==3){
+                matrix[Q][W-1].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
+                map.getMatrix()[W-1][Q]=new Blank();
+            }
+            if(map.getMatrix()[W+1][Q].ID==3){
+                matrix[Q][W+1].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
+                map.getMatrix()[W+1][Q]=new Blank();
+            }
+            
         }
         
         //Left

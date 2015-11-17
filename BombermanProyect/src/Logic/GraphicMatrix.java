@@ -1,6 +1,9 @@
 
 package Logic;
 
+/**
+* Imported libraries
+*/
 import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -10,7 +13,6 @@ import java.awt.event.KeyListener;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-//import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
@@ -37,24 +39,24 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         
         
        /**
-        * Ciclos para crear la matriz
+        * Cycles to create the array
         */
         for (int y = 0; y < size; y++) {
             for (int x = 0; x < size; x++) {
                 JLabel lbl = new JLabel();
-
+                /**
+                * Paint the entire matrix
+                */
                 lbl.setBounds(x*globals.getNum2(), y*globals.getNum2(), globals.getNum2(), globals.getNum2());
                 lbl.setIcon(setIcon(globals.getNum2(),"/Images/bloque.png"));
                 matrix[x][y] = lbl;
                 globals.getGbc().gridx = x*globals.getNum2();
-                //globals.getGbc().gridy = y*num;
-                //this.gbc.gridx=x*num;
                 this.gbc.gridy=y*globals.getNum2();
-                //globales.getPanel().add(lbl,this.gbc);
                 this.panel.add(lbl,this.gbc);
 
-                //getContentPane().add(lbl);
-
+                /**
+                * Putting green block in odd positions
+                */
                 if(((x%2)!=0) ||((y%2)!=0)){
 
                     matrix[x][y].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
@@ -62,8 +64,8 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
             }            
         }
         
-        /*
-        *Este ciclo es para pintar la pared de arriba y de abajo de la matrix
+        /**
+        * This cycle is to paint the wall above and below the matrix
         */
         for(int x =0;x<size;x++){
             matrix[0][x].setIcon(setIcon(globals.getNum2(),"/Images/bloque.png"));
@@ -74,25 +76,30 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         }
      
         this.getContentPane().add(panel,BorderLayout.NORTH);
-        
-       for (int y = 0; y < size; y++) {
+        /**
+        * puts the correct image by ID
+        */ 
+        for (int y = 0; y < size; y++) {
             for (int x = 0; x < size; x++) {
                 if(this.map.getMatrix()[x][y].ID==3){
-                    matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/BarrierBloc.png"));
+                     matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/BarrierBloc.png"));
                 }
                 else if(this.map.getMatrix()[x][y].ID==4){
-                    matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
+                     matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
                 }
                 else if(this.map.getMatrix()[x][y].ID==5){
-                    matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/globo.png"));
+                     matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/globo.png"));
                 }
                 else if(this.map.getMatrix()[x][y].ID==6){
-                    matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/barrilToxico.png"));
+                     matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/barrilToxico.png"));
                 }
             }            
         } 
     }
-
+    
+    /**
+    * The set and get
+    */
     public JLabel[][] getMatrix() {
         return matrix;
     }
@@ -110,7 +117,9 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     }
 
     
-    
+    /**
+    * To capture keystrokes
+    */
     @Override
     public void keyTyped(KeyEvent ke) {
         
@@ -147,25 +156,22 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
             
         }
         
-        //Left
+        // Move Left
         if(ke.getKeyCode()==37)
         {
             if(map.getMatrix()[W][Q-1].ID==2){
-                //JOptionPane.showMessageDialog(this, "Presionó izquierda");
                 matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
                 map.getMatrix()[W][Q]=new Blank();
-                
                 Q--;
                 map.getMatrix()[W][Q]=map.getHero();
                 matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
                 //map.printAll();
             }
         }
-        //Down
+        // Move Down
         if(ke.getKeyCode()==40)
         {
             if(map.getMatrix()[W+1][Q].ID==2){
-                //JOptionPane.showMessageDialog(this, "Presionó abajo");
                 matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
                 map.getMatrix()[W][Q]=new Blank();
                 W++;
@@ -174,7 +180,7 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
                 //map.printAll();
             }
         }
-        //Rigth
+        // Move Rigth
         if(ke.getKeyCode()==39)
         {
             if(map.getMatrix()[W][Q+1].ID==2){
@@ -182,13 +188,12 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
                 map.getMatrix()[W][Q]=new Blank();
                 Q++;
                 matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
-                //JOptionPane.showMessageDialog(this, "Presionó derecha");
                 map.getMatrix()[W][Q]=map.getHero();
                 //map.printAll();
             }
             
         }
-        //Up
+        // Move up
         if(ke.getKeyCode()==38)
         {
             if(map.getMatrix()[W-1][Q].ID==2){
@@ -196,7 +201,6 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
                 map.getMatrix()[W][Q]=new Blank();
                 W--;
                 matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
-                //JOptionPane.showMessageDialog(this, "Presionó arriba");
                 map.getMatrix()[W][Q]=map.getHero();
                 //map.printAll();
             }
@@ -212,7 +216,9 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     public void keyReleased(KeyEvent ke) {
         
     }
-    
+    /**
+    * It is used to set icons
+    */
     public ImageIcon setIcon(int scale,String direction){
     URL url = getClass().getResource(direction);
     ImageIcon icon = new ImageIcon(url);

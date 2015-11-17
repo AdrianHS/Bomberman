@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package Logic;
+
+/**
+* Imported libraries
+*/
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

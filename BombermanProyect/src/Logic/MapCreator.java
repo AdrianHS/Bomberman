@@ -6,6 +6,9 @@
 
 package Logic;
 
+/**
+* Imported libraries
+*/
 import com.sun.media.sound.EmergencySoundbank;
 import java.util.Random;
 
@@ -26,7 +29,9 @@ public class MapCreator {
         this.size=size;
         matrix = new Element[size][size];
         SolidBloc bloc = new SolidBloc();
-        //Fill all in SolidBlocs
+        /**
+        * Fill all in SolidBlocs
+        */
         for (int x=0; x < size; x++) {
             for (int y=0; y < size; y++) {
                 //System.out.println (matriz[x][y]);             
@@ -41,7 +46,9 @@ public class MapCreator {
             
             
         }
-        //Put the Blanks
+        /**
+        * Put the Blanks
+        */
         for(int x =0;x<size;x++){
             matrix[0][x]=bloc;
             matrix[size-1][x]=bloc;
@@ -49,12 +56,16 @@ public class MapCreator {
             matrix[x][size-1]=bloc;
         }
         
-        //Space for boomberman
+        /**
+        * Space for boomberman
+        */
         matrix[1][1].ID = -1;
         matrix[1][2].ID = -1;
         matrix[2][1].ID = -1;
         
-        //Put the BarrierBlocs
+        /**
+        * Put the BarrierBlocs
+        */
         for(int cont = blocQ; cont != 0;){
             Random r1 = new Random();
             Random r2 = new Random();
@@ -72,7 +83,9 @@ public class MapCreator {
             
         }
         
-        //Put the ballons
+        /**
+        * Put the ballons
+        */
         for(int cont = ballons; cont != 0;){
             Random r1 = new Random();
             Random r2 = new Random();
@@ -89,7 +102,9 @@ public class MapCreator {
                 }                   
             
         }
-        //Put the barrels
+        /**
+        * Put the barrels
+        */
         for(int cont = barrels; cont != 0;){
             Random r1 = new Random();
             Random r2 = new Random();
@@ -111,8 +126,9 @@ public class MapCreator {
         matrix[1][2].ID = 2;
         matrix[2][1].ID = 2;
         
-        //Hero on his place
-        
+        /**
+        * Hero on his place
+        */
         matrix[1][1] = hero;
         
        

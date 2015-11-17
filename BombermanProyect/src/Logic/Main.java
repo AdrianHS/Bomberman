@@ -1,3 +1,4 @@
+package Logic;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,9 +6,6 @@
  */
 //Ultima modificacion: 3/11/15  ---  21:54
 
-package Logic;
-
-import javax.swing.JFrame;
 
 /**
  *
@@ -18,7 +16,7 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args){
         
         /*
         MapCreator logicMap = new MapCreator();
@@ -37,8 +35,10 @@ public class Main {
         */
         Game game = new Game();
         //game.setVisible(true);
+        //Sound s = new Sound();
+        //s.player.play();
         
-        System.out.println("Hoooola");
+        System.out.println("Hoooola");  
     }
     
 }

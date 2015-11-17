@@ -13,15 +13,16 @@ import java.util.Random;
  * @author _ADRIAN_
  */
 public class MapCreator {
-    
+    Hero hero = new Hero();
     Element [][] matrix;
-
+    int size;
     public MapCreator() {
     }
     
    
     
     public void LogicMatrix(int size, int blocQ){ 
+        this.size=size;
         matrix = new Element[size][size];
         SolidBloc bloc = new SolidBloc();
         //Fill all in SolidBlocs
@@ -75,12 +76,44 @@ public class MapCreator {
         matrix[2][1].ID = 2;
         
         //Hero on his place
-        Hero hero = new Hero();
+        
         matrix[1][1] = hero;
         
+       
         
         
+        
+    
+        int asd = 0;
+        for (int x=0; x < size; x++) {
+            for (int y=0; y < size; y++) {
+                           
+                if (matrix[x][y].ID==3){
+                    asd++;
    
+                }
+            }
+            
+            
+        }
+        System.out.println(asd);
+        
+    }   
+
+    public Element[][] getMatrix() {
+        return matrix;
+    }
+
+    public void setMatrix(Element[][] matrix) {
+        this.matrix = matrix;
+    }
+
+    public Hero getHero() {
+        return hero;
+    }
+    
+    
+    public void printAll(){
         //Print all
         for(int x =0;x<size;x++){
             for(int y =0;y<size;y++){
@@ -101,27 +134,6 @@ public class MapCreator {
             
             
         }
-        int asd = 0;
-        for (int x=0; x < size; x++) {
-            for (int y=0; y < size; y++) {
-                           
-                if (matrix[x][y].ID==3){
-                    asd++;
-   
-                }
-            }
-            
-            
-        }
-        System.out.println(asd);
-        
-    }   
-
-    public Element[][] getMatrix() {
-        return matrix;
     }
-    
-    
-    
         
 }

@@ -4,49 +4,26 @@
  * and open the template in the editor.
  */
 package Logic;
-import java.awt.Image;
+
+import com.sun.java.accessibility.util.AWTEventMonitor;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.net.URL;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
-
 
 /**
  *
  * @author AndrewJ
  */
+public class Keylist extends javax.swing.JFrame implements KeyListener {
 
-public class Game {//extends javax.swing.JFrame implements KeyListener{
-    MapCreator logicMap;
-    GraphicMatrix b;   
-    int num=25;
-    int Q =1;
-    int W =1;
-    
-   
-    
-    public Game() {
-        
-        //addKeyListener(this);
-        logicMap = new MapCreator();
-        logicMap.LogicMatrix(25,175);
-        b = new GraphicMatrix(logicMap,25); 
-        b.setSize(648, 667);
-        b.setLocationRelativeTo(null);
-        b.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        b.setVisible(true);
-        b.setTitle("BOMBERMAN");
-        
-        
+    public Keylist() {
+        System.out.println("Hoooola");
+        addKeyListener(this);
+        System.out.println("Hoooola");
     }
     
-    
-    /*
-    @Override
+
+        
+@Override
     public void keyTyped(KeyEvent ke) {
         
     }
@@ -87,20 +64,16 @@ public class Game {//extends javax.swing.JFrame implements KeyListener{
             //JOptionPane.showMessageDialog(this, "Presionó arriba");
         }
         
-    }
-    
-    @Override
-    public void keyReleased(KeyEvent e) {
         
     }
-    */
-    /*
-    public ImageIcon setIcon(int scale,String direction){
-    URL url = getClass().getResource(direction);
-    ImageIcon icon = new ImageIcon(url);
-    ImageIcon tempIcon = new ImageIcon(icon.getImage().getScaledInstance(scale, -1, Image.SCALE_DEFAULT));
-    return tempIcon;
-    }
-*/
+
+  
+     
     
+    
+    @Override
+    public void keyReleased(KeyEvent ke) {
+        
+    }
+
 }

@@ -10,10 +10,11 @@ package Logic;
  *
  * @author _ADRIAN_
  */
-public class Bomb extends Element {
+public abstract class Bomb extends Element {
 
     public Bomb() {
         super(87);
     }
+    
     
 }

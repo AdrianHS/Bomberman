@@ -31,9 +31,13 @@ public class Main {
         b.setVisible(true);
 
         */
-
+        /*
+        Keylist keylis = new Keylist();
+        keylis.setVisible(true);
+        */
         Game game = new Game();
-       
+        //game.setVisible(true);
+        
         System.out.println("Hoooola");
     }
     

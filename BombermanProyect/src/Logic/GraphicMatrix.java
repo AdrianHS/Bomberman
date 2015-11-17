@@ -21,8 +21,12 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     JLabel [][] matrix; 
     
     
-    public GraphicMatrix(Element map [][],int size) {
+    MapCreator map;
+    public GraphicMatrix(MapCreator map,int size) {
         matrix = new JLabel[size][size];
+        
+        this.map=map;
+        
         
         addKeyListener(this);
         
@@ -30,7 +34,6 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         this.panel = new JPanel();
         this.panel.setLayout(new GridBagLayout());
         this.gbc=new GridBagConstraints();
-        
         
         
        /**
@@ -73,10 +76,10 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         
        for (int y = 0; y < size; y++) {
             for (int x = 0; x < size; x++) {
-                if(map[x][y].ID==3){
+                if(this.map.getMatrix()[x][y].ID==3){
                     matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/BarrierBloc.png"));
                 }
-                else if(map[x][y].ID==4){
+                else if(this.map.getMatrix()[x][y].ID==4){
                     matrix[y][x].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
                 }
             }            
@@ -120,39 +123,60 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
             matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/BombAndHero1.png"));
         }
         
+        //Left
         if(ke.getKeyCode()==37)
         {
-            
-            //JOptionPane.showMessageDialog(this, "Presionó izquierda");
-            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
-            Q--;
-            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
-            
+            if(map.getMatrix()[W][Q-1].ID==2){
+                //JOptionPane.showMessageDialog(this, "Presionó izquierda");
+                matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
+                map.getMatrix()[W][Q]=new Blank();
+                
+                Q--;
+                map.getMatrix()[W][Q]=map.getHero();
+                matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
+                //map.printAll();
+            }
         }
+        //Down
         if(ke.getKeyCode()==40)
         {
-            //JOptionPane.showMessageDialog(this, "Presionó abajo");
-            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
-            W++;
-            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
+            if(map.getMatrix()[W+1][Q].ID==2){
+                //JOptionPane.showMessageDialog(this, "Presionó abajo");
+                matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
+                map.getMatrix()[W][Q]=new Blank();
+                W++;
+                matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
+                map.getMatrix()[W][Q]=map.getHero();
+                //map.printAll();
+            }
         }
-        
+        //Rigth
         if(ke.getKeyCode()==39)
         {
-            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
-            Q++;
-            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
-            //JOptionPane.showMessageDialog(this, "Presionó derecha");
+            if(map.getMatrix()[W][Q+1].ID==2){
+                matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
+                map.getMatrix()[W][Q]=new Blank();
+                Q++;
+                matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
+                //JOptionPane.showMessageDialog(this, "Presionó derecha");
+                map.getMatrix()[W][Q]=map.getHero();
+                //map.printAll();
+            }
+            
         }
-        
+        //Up
         if(ke.getKeyCode()==38)
         {
-            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
-            W--;
-            matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
-            //JOptionPane.showMessageDialog(this, "Presionó arriba");
+            if(map.getMatrix()[W-1][Q].ID==2){
+                matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/bloqueVacio.png"));
+                map.getMatrix()[W][Q]=new Blank();
+                W--;
+                matrix[Q][W].setIcon(setIcon(globals.getNum2(),"/Images/Hero1.png"));
+                //JOptionPane.showMessageDialog(this, "Presionó arriba");
+                map.getMatrix()[W][Q]=map.getHero();
+                //map.printAll();
+            }
         }
-        
         
     }
 

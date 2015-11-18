@@ -33,12 +33,12 @@ public class Game {//extends javax.swing.JFrame implements KeyListener{
     
    
     
-    public Game() {
+    public Game(int size, int block, int balloons, int barrels, int itemSize) {
         
         //addKeyListener(this);
         logicMap = new MapCreator();
-        logicMap.LogicMatrix(25,175,12,10);
-        b = new GraphicMatrix(logicMap,25); 
+        logicMap.LogicMatrix(size,block,balloons,barrels);
+        b = new GraphicMatrix(logicMap,size,itemSize); 
         b.setSize(648, 667);
         b.setLocationRelativeTo(null);
         b.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

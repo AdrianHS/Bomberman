@@ -33,7 +33,13 @@ public class Main {
         Keylist keylis = new Keylist();
         keylis.setVisible(true);
         */
-        Game game = new Game();
+        
+        //Easy 15,35,5,3,42
+        //Medium 21,75,8,5,30
+        //Hard 25,120,12,10,25
+        
+        Game game = new Game(21,75,8,5,30);
+        
         //game.setVisible(true);
         //Sound s = new Sound();
         //s.player.play();

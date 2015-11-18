@@ -25,7 +25,7 @@ public class MapCreator {
     
    
     
-    public void LogicMatrix(int size, int blocQ,int ballons,int barrels){ 
+    public void LogicMatrix(int size, int blocQ,int balloons,int barrels){ 
         this.size=size;
         matrix = new Element[size][size];
         SolidBloc bloc = new SolidBloc();
@@ -84,9 +84,9 @@ public class MapCreator {
         }
         
         /**
-        * Put the ballons
+        * Put the balloons
         */
-        for(int cont = ballons; cont != 0;){
+        for(int cont = balloons; cont != 0;){
             Random r1 = new Random();
             Random r2 = new Random();
             int q = r1.nextInt(size);

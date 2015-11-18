@@ -38,7 +38,7 @@ public class Main {
         //Medium 21,75,8,5,30
         //Hard 25,120,12,10,25
         
-        Game game = new Game(21,75,8,5,30);
+        //Game game = new Game(21,75,8,5,30);
         
         //game.setVisible(true);
         //Sound s = new Sound();

@@ -81,6 +81,8 @@ public class MapCreator {
             if(matrix[q][w].ID == 2 && matrix[q][w].ID != -1){
                 BarrierBloc b = new BarrierBloc();
                 matrix[q][w]= b;
+                
+                
                 if(cantBuffs!=0){
                     b.setBuff(1);
                     cantBuffs--;

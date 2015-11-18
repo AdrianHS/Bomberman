@@ -12,7 +12,7 @@ package Logic;
  */
 public class Element {
     int ID;
-
+    
     public Element(int ID) {   
         this.ID = ID;
     }

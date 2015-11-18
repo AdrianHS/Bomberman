@@ -12,7 +12,7 @@ import java.awt.event.KeyListener;
  *
  * @author _ADRIAN_
  */
-public class Hero extends Element {
+public class Hero extends Element{
     
     public Hero() {
         super(4);

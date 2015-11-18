@@ -20,10 +20,11 @@ public class MapCreator {
     Hero hero = new Hero();
     Element [][] matrix;
     int size;
+   
     public MapCreator() {
     }
     
-   
+    
     
     public void LogicMatrix(int size, int blocQ,int balloons,int barrels){ 
         this.size=size;
@@ -66,6 +67,9 @@ public class MapCreator {
         /**
         * Put the BarrierBlocs
         */
+        int cantBuffs = 3;
+        boolean door = true;
+        
         for(int cont = blocQ; cont != 0;){
             Random r1 = new Random();
             Random r2 = new Random();
@@ -75,8 +79,15 @@ public class MapCreator {
             
             
             if(matrix[q][w].ID == 2 && matrix[q][w].ID != -1){
-                
-                matrix[q][w]= new BarrierBloc();
+                BarrierBloc b = new BarrierBloc();
+                matrix[q][w]= b;
+                if(cantBuffs!=0){
+                    b.setBuff(1);
+                    cantBuffs--;
+                }
+                if(door||cantBuffs==0){
+                    b.setBuff(2);
+                }
                 cont--; 
             
                 }                   
@@ -121,6 +132,7 @@ public class MapCreator {
                 }                   
             
         }
+
         
         matrix[1][1].ID = 2;
         matrix[1][2].ID = 2;

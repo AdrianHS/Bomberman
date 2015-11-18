@@ -1,4 +1,7 @@
 package Logic;
+
+import Graphic.Principal;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -43,6 +46,10 @@ public class Main {
         //game.setVisible(true);
         //Sound s = new Sound();
         //s.player.play();
+        
+        
+        Graphic.Principal p = new Principal();
+        p.setVisible(true);
         
         System.out.println("Hoooola");  
     }

@@ -11,6 +11,8 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -142,23 +144,30 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
             
             map.getMatrix()[W][Q] = bomb;
             
+            
             if(map.getMatrix()[W][Q+1].ID==3){
                 matrix[Q+1][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
+                
                 map.getMatrix()[W][Q+1]=new Blank();
             }
             if(map.getMatrix()[W][Q-1].ID==3){
                 matrix[Q-1][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
+                
                 map.getMatrix()[W][Q-1]=new Blank();
             }
             if(map.getMatrix()[W-1][Q].ID==3){
                 matrix[Q][W-1].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
+                
                 map.getMatrix()[W-1][Q]=new Blank();
             }
             if(map.getMatrix()[W+1][Q].ID==3){
                 matrix[Q][W+1].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
+                
                 map.getMatrix()[W+1][Q]=new Blank();
             }
             
+            //matrix[Q][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
+            //map.getMatrix()[W][Q]=new Blank();
         }
         
         // Move Left

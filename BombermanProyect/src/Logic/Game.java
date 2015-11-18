@@ -44,6 +44,7 @@ public class Game {//extends javax.swing.JFrame implements KeyListener{
         b.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         b.setVisible(true);
         b.setTitle("BOMBERMAN");
+        b.setIconImage(new ImageIcon(getClass().getResource("/Images/Hero2.png")).getImage());
         
         
     }

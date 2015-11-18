@@ -11,9 +11,18 @@ package Logic;
  * @author _ADRIAN_
  */
 public class BarrierBloc extends Element{
-
+    int buff;
     public BarrierBloc() {
         super(3);
+        this.buff=0;
+    }
+
+    public int getBuff() {
+        return buff;
+    }
+
+    public void setBuff(int buff) {
+        this.buff = buff;
     }
     
 }

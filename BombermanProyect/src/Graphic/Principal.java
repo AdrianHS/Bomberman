@@ -30,7 +30,7 @@ public class Principal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Bomberman");
-        setIconImage(new ImageIcon(getClass().getResource("/Images/Hero1.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Images/Hero2.png")).getImage());
         ((JPanel)getContentPane()).setOpaque(false);
         ImageIcon uno = new ImageIcon(this.getClass().getResource("/Images/bomba.png"));
         JLabel fondo = new JLabel();
@@ -113,16 +113,24 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        factory.createGame(globals.getMatrizSizeEasy(), globals.getBarrierBlockEasy(), globals.getBalloonsEasy(), globals.getBarrelsEasy(), globals.getItemSizeEasy());
-    
+        factory.createGame(globals.getMatrizSizeEasy(),
+                globals.getBarrierBlockEasy(), globals.getBalloonsEasy(), 
+                globals.getBarrelsEasy(), globals.getItemSizeEasy());
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        factory.createGame(globals.getMatrizSizeIntermediate(), globals.getBarrierBlockIntermediate(), globals.getBalloonsIntermediate(), globals.getBarrelsIntermediate(), globals.getItemSizeIntermediate());
+        factory.createGame(globals.getMatrizSizeIntermediate(), 
+                globals.getBarrierBlockIntermediate(), globals.getBalloonsIntermediate(),
+                globals.getBarrelsIntermediate(), globals.getItemSizeIntermediate());
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        factory.createGame(globals.getMatrizSizeDifficult(), globals.getBarrierBlockDifficult(), globals.getBalloonsDifficult(), globals.getBarrelsDifficult(), globals.getItemSizeDifficult());
+        factory.createGame(globals.getMatrizSizeDifficult(),
+                globals.getBarrierBlockDifficult(), globals.getBalloonsDifficult(), 
+                globals.getBarrelsDifficult(), globals.getItemSizeDifficult());
+        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

@@ -25,78 +25,75 @@ import javax.swing.JPanel;
  */
 
 public class Game {//extends javax.swing.JFrame implements KeyListener{
-    MapCreator logicMap;
-    GraphicMatrix b;   
-    int num=25;
-    int Q =1;
-    int W =1;
+    private MapCreator logicMap;
+    private GraphicMatrix graphicMap;       
+    Globals globals = Globals.getInstance();
     
-   
     
     public Game(int size, int block, int balloons, int barrels, int itemSize) {
         
         //addKeyListener(this);
         logicMap = new MapCreator();
         logicMap.LogicMatrix(size,block,balloons,barrels);
-        b = new GraphicMatrix(logicMap,size,itemSize); 
-        b.setSize(648, 667);
-        b.setLocationRelativeTo(null);
-        b.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        b.setVisible(true);
-        b.setTitle("BOMBERMAN");
-        b.setIconImage(new ImageIcon(getClass().getResource("/Images/Hero2.png")).getImage());
         
+        graphicMap = new GraphicMatrix(logicMap,size,itemSize); 
+        graphicMap.setSize(648, 667);
+        graphicMap.setLocationRelativeTo(null);
+        graphicMap.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        graphicMap.setVisible(true);
+        graphicMap.setTitle("BOMBERMAN");
+        graphicMap.setIconImage(new ImageIcon(getClass().getResource("/Images/Hero2.png")).getImage());
+        
+        globals.setLogic(logicMap);
+        globals.setGraphic(graphicMap);
         
     }
     
+    
+    public MapCreator getLogicMap() {
+        return logicMap;
+    }
+
+    public void setLogicMap(MapCreator logicMap) {
+        this.logicMap = logicMap;
+    }
+
+    public GraphicMatrix getGraphicMap() {
+        return graphicMap;
+    }
+
+    public void setGraphicMap(GraphicMatrix graphicMap) {
+        this.graphicMap = graphicMap;
+    }
     
     /*
     @Override
-    public void keyTyped(KeyEvent ke) {
-        
+    public void keyTyped(KeyEvent ke) {  
     }
-
     @Override
     public void keyPressed(KeyEvent ke) {
-        
         System.out.println(ke.getKeyCode());
-
         if(ke.getKeyCode()==32)    
-        {
-            
-            
+        {  
             //JOptionPane.showMessageDialog(this, "Presionó espacio");
-     
         }
-        
         if(ke.getKeyCode()==37)
-        {
-            
-            
-            
+        {    
         }
         if(ke.getKeyCode()==40)
-        {   
-            
+        {      
         }
-        
         if(ke.getKeyCode()==39)
-        {
-            
+        {   
             //JOptionPane.showMessageDialog(this, "Presionó derecha");
         }
-        
         if(ke.getKeyCode()==38)
-        {
-            
+        {            
             //JOptionPane.showMessageDialog(this, "Presionó arriba");
-        }
-        
-    }
-    
+        }       
+    } 
     @Override
-    public void keyReleased(KeyEvent e) {
-        
+    public void keyReleased(KeyEvent e) {    
     }
     */
     /*
@@ -107,5 +104,8 @@ public class Game {//extends javax.swing.JFrame implements KeyListener{
     return tempIcon;
     }
 */
+
+
+  
     
 }

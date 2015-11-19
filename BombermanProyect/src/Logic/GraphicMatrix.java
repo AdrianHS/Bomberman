@@ -26,11 +26,12 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     JLabel [][] matrix; 
     Bomb bomb = new Bomb();
     int itemSize;
-    
-    
     MapCreator map;
+    
+    
     public GraphicMatrix(MapCreator map,int size,int itemSize) {
         matrix = new JLabel[size][size];
+        
         this.itemSize=itemSize;
         this.map=map;
         
@@ -129,8 +130,8 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     public void keyTyped(KeyEvent ke) {
         
     }
-    int Q =1;
-    int W =1;
+    int heroX =1;
+    int heroY =1;
     @Override
     public void keyPressed(KeyEvent ke) {
         
@@ -140,31 +141,31 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         if(ke.getKeyCode()==32)    
         {
             //JOptionPane.showMessageDialog(this, "Presionó espacio");
-            matrix[Q][W].setIcon(setIcon(itemSize,"/Images/BombAndHero1.png"));
-            matrix[Q][W].setIcon(setIcon(itemSize,"/Images/BombAndHero1.png"));
+            matrix[heroX][heroY].setIcon(setIcon(itemSize,"/Images/BombAndHero1.png"));
+            matrix[heroX][heroY].setIcon(setIcon(itemSize,"/Images/BombAndHero1.png"));
             
-            map.getMatrix()[W][Q] = bomb;
+            map.getMatrix()[heroY][heroX] = bomb;
             
             
-            if(map.getMatrix()[W][Q+1].ID==3){
-                matrix[Q+1][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
+            if(map.getMatrix()[heroY][heroX+1].ID==3){
+                matrix[heroX+1][heroY].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
                 
-                map.getMatrix()[W][Q+1]=new Blank();
+                map.getMatrix()[heroY][heroX+1]=new Blank();
             }
-            if(map.getMatrix()[W][Q-1].ID==3){
-                matrix[Q-1][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
+            if(map.getMatrix()[heroY][heroX-1].ID==3){
+                matrix[heroX-1][heroY].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
                 
-                map.getMatrix()[W][Q-1]=new Blank();
+                map.getMatrix()[heroY][heroX-1]=new Blank();
             }
-            if(map.getMatrix()[W-1][Q].ID==3){
-                matrix[Q][W-1].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
+            if(map.getMatrix()[heroY-1][heroX].ID==3){
+                matrix[heroX][heroY-1].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
                 
-                map.getMatrix()[W-1][Q]=new Blank();
+                map.getMatrix()[heroY-1][heroX]=new Blank();
             }
-            if(map.getMatrix()[W+1][Q].ID==3){
-                matrix[Q][W+1].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
+            if(map.getMatrix()[heroY+1][heroX].ID==3){
+                matrix[heroX][heroY+1].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
                 
-                map.getMatrix()[W+1][Q]=new Blank();
+                map.getMatrix()[heroY+1][heroX]=new Blank();
             }
             
             //matrix[Q][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
@@ -214,75 +215,25 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         // Move Left
         if(ke.getKeyCode()==37)
         {
-            if(map.getMatrix()[W][Q-1].ID==2){
-                if(map.getMatrix()[W][Q].ID==7){
-                    matrix[Q][W].setIcon(setIcon(itemSize,"/Images/bomb.png"));
-                }
-                else{
-                    matrix[Q][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-                    map.getMatrix()[W][Q]=new Blank(); 
-                }
+            globals.getLogic().getHero().moveLeft();
                 
-                Q--;
-                map.getMatrix()[W][Q]=map.getHero();
-                matrix[Q][W].setIcon(setIcon(itemSize,"/Images/Hero1.png"));
-                //map.printAll();
-            }
+            
         }
         // Move Down
         if(ke.getKeyCode()==40)
         {
-            if(map.getMatrix()[W+1][Q].ID==2){
-                if(map.getMatrix()[W][Q].ID==7){
-                    matrix[Q][W].setIcon(setIcon(itemSize,"/Images/bomb.png"));
-                }
-                else{
-                    matrix[Q][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-                    map.getMatrix()[W][Q]=new Blank();
-                }
-                
-                W++;
-                matrix[Q][W].setIcon(setIcon(itemSize,"/Images/Hero1.png"));
-                map.getMatrix()[W][Q]=map.getHero();
-                //map.printAll();
-            }
+            globals.getLogic().getHero().moveDown();
         }
         // Move Rigth
         if(ke.getKeyCode()==39)
         {
-            if(map.getMatrix()[W][Q+1].ID==2){
-                if(map.getMatrix()[W][Q].ID==7){
-                    matrix[Q][W].setIcon(setIcon(itemSize,"/Images/bomb.png"));
-                }
-                else{
-                    matrix[Q][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-                    map.getMatrix()[W][Q]=new Blank();
-                }
-                
-                Q++;
-                matrix[Q][W].setIcon(setIcon(itemSize,"/Images/Hero1.png"));
-                map.getMatrix()[W][Q]=map.getHero();
-                //map.printAll();
-            }
+            globals.getLogic().getHero().moveRight();
             
         }
         // Move up
         if(ke.getKeyCode()==38)
         {
-            if(map.getMatrix()[W-1][Q].ID==2){
-                if(map.getMatrix()[W][Q].ID==7){
-                    matrix[Q][W].setIcon(setIcon(itemSize,"/Images/bomb.png"));
-                }
-                else{
-                    matrix[Q][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-                    map.getMatrix()[W][Q]=new Blank();
-                }
-                
-                W--;
-                matrix[Q][W].setIcon(setIcon(itemSize,"/Images/Hero1.png"));
-                map.getMatrix()[W][Q]=map.getHero();
-                //map.printAll();
-            }
+            globals.getLogic().getHero().moveUp();
         }
         
     }

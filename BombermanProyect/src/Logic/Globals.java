@@ -15,6 +15,10 @@ import javax.swing.JPanel;
  * @author _ADRIAN_
  */
 public class Globals {
+    
+    private MapCreator logic;
+    private GraphicMatrix graphic;
+    
     public static Globals instance;
     private JPanel  panel;
     private GridBagConstraints gbc;
@@ -64,147 +68,167 @@ public class Globals {
             instance.balloonsDifficult = 12;
             instance.barrelsDifficult = 10;
             instance.itemSizeDifficult = 25;
-                                            
+          
+            instance.logic=null;
+            instance.graphic=null;
        
         }
         return instance;
     }
 
+    public MapCreator getLogic() {
+        return instance.logic;
+    }
+
+    public void setLogic(MapCreator logic) {
+        instance.logic = logic;
+    }
+
+    public GraphicMatrix getGraphic() {
+        return instance.graphic;
+    }
+
+    public void setGraphic(GraphicMatrix graphic) {
+        instance.graphic = graphic;
+    }
+
+ 
+    
     public JPanel getPanel() {
-        return panel;
+        return instance.panel;
     }
 
     public void setPanel(JPanel panel) {
-        this.panel = panel;
+        instance.panel = panel;
     }
 
     public GridBagConstraints getGbc() {
-        return gbc;
+        return instance.gbc;
     }
 
     public void setGbc(GridBagConstraints gbc) {
-        this.gbc = gbc;
-        this.panel.setLayout(new GridBagLayout());
+        instance.gbc = gbc;
+        instance.panel.setLayout(new GridBagLayout());
     }
 
     public int getMatrizSizeEasy() {
-        return matrizSizeEasy;
+        return instance.matrizSizeEasy;
     }
 
     public void setMatrizSizeEasy(int matrizSizeEasy) {
-        this.matrizSizeEasy = matrizSizeEasy;
+        instance.matrizSizeEasy = matrizSizeEasy;
     }
 
     public int getBarrierBlockEasy() {
-        return barrierBlockEasy;
+        return instance.barrierBlockEasy;
     }
 
     public void setBarrierBlockEasy(int barrierBlockEasy) {
-        this.barrierBlockEasy = barrierBlockEasy;
+        instance.barrierBlockEasy = barrierBlockEasy;
     }
 
     public int getBalloonsEasy() {
-        return balloonsEasy;
+        return instance.balloonsEasy;
     }
 
     public void setBalloonsEasy(int balloonsEasy) {
-        this.balloonsEasy = balloonsEasy;
+        instance.balloonsEasy = balloonsEasy;
     }
 
     public int getBarrelsEasy() {
-        return barrelsEasy;
+        return instance.barrelsEasy;
     }
 
     public void setBarrelsEasy(int barrelsEasy) {
-        this.barrelsEasy = barrelsEasy;
+        instance.barrelsEasy = barrelsEasy;
     }
 
     public int getItemSizeEasy() {
-        return itemSizeEasy;
+        return instance.itemSizeEasy;
     }
 
     public void setItemSizeEasy(int itemSizeEasy) {
-        this.itemSizeEasy = itemSizeEasy;
+        instance.itemSizeEasy = itemSizeEasy;
     }
 
     public int getMatrizSizeIntermediate() {
-        return matrizSizeIntermediate;
+        return instance.matrizSizeIntermediate;
     }
 
     public void setMatrizSizeIntermediate(int matrizSizeIntermediate) {
-        this.matrizSizeIntermediate = matrizSizeIntermediate;
+        instance.matrizSizeIntermediate = matrizSizeIntermediate;
     }
 
     public int getBarrierBlockIntermediate() {
-        return barrierBlockIntermediate;
+        return instance.barrierBlockIntermediate;
     }
 
     public void setBarrierBlockIntermediate(int barrierBlockIntermediate) {
-        this.barrierBlockIntermediate = barrierBlockIntermediate;
+        instance.barrierBlockIntermediate = barrierBlockIntermediate;
     }
 
     public int getBalloonsIntermediate() {
-        return balloonsIntermediate;
+        return instance.balloonsIntermediate;
     }
 
     public void setBalloonsIntermediate(int balloonsIntermediate) {
-        this.balloonsIntermediate = balloonsIntermediate;
+        instance.balloonsIntermediate = balloonsIntermediate;
     }
 
     public int getBarrelsIntermediate() {
-        return barrelsIntermediate;
+        return instance.barrelsIntermediate;
     }
 
     public void setBarrelsIntermediate(int barrelsIntermediate) {
-        this.barrelsIntermediate = barrelsIntermediate;
+        instance.barrelsIntermediate = barrelsIntermediate;
     }
 
     public int getItemSizeIntermediate() {
-        return itemSizeIntermediate;
+        return instance.itemSizeIntermediate;
     }
 
     public void setItemSizeIntermediate(int itemSizeIntermediate) {
-        this.itemSizeIntermediate = itemSizeIntermediate;
+        instance.itemSizeIntermediate = itemSizeIntermediate;
     }
 
     public int getMatrizSizeDifficult() {
-        return matrizSizeDifficult;
+        return instance.matrizSizeDifficult;
     }
 
     public void setMatrizSizeDifficult(int matrizSizeDifficult) {
-        this.matrizSizeDifficult = matrizSizeDifficult;
+        instance.matrizSizeDifficult = matrizSizeDifficult;
     }
 
     public int getBarrierBlockDifficult() {
-        return barrierBlockDifficult;
+        return instance.barrierBlockDifficult;
     }
 
     public void setBarrierBlockDifficult(int barrierBlockDifficult) {
-        this.barrierBlockDifficult = barrierBlockDifficult;
+        instance.barrierBlockDifficult = barrierBlockDifficult;
     }
 
     public int getBalloonsDifficult() {
-        return balloonsDifficult;
+        return instance.balloonsDifficult;
     }
 
     public void setBalloonsDifficult(int balloonsDifficult) {
-        this.balloonsDifficult = balloonsDifficult;
+        instance.balloonsDifficult = balloonsDifficult;
     }
 
     public int getBarrelsDifficult() {
-        return barrelsDifficult;
+        return instance.barrelsDifficult;
     }
 
     public void setBarrelsDifficult(int barrelsDifficult) {
-        this.barrelsDifficult = barrelsDifficult;
+        instance.barrelsDifficult = barrelsDifficult;
     }
 
     public int getItemSizeDifficult() {
-        return itemSizeDifficult;
+        return instance.itemSizeDifficult;
     }
 
     public void setItemSizeDifficult(int itemSizeDifficult) {
-        this.itemSizeDifficult = itemSizeDifficult;
+        instance.itemSizeDifficult = itemSizeDifficult;
     }
   
 }

@@ -9,7 +9,7 @@ package Logic;
 /**
 * Imported libraries
 */
-import com.sun.media.sound.EmergencySoundbank;
+
 import java.util.Random;
 
 /**
@@ -75,7 +75,7 @@ public class MapCreator {
             Random r2 = new Random();
             int q = r1.nextInt(size);
             int w = r2.nextInt(size);
-            //System.out.println(q+" "+w);
+            //System.out.println(q+" "+w+" "+cantBuffs);
             
             
             if(matrix[q][w].ID == 2 && matrix[q][w].ID != -1){
@@ -159,11 +159,8 @@ public class MapCreator {
    
                 }
             }
-            
-            
         }
-        System.out.println(asd);
-        
+        System.out.println(asd); 
     }   
 
     public Element[][] getMatrix() {
@@ -200,6 +197,9 @@ public class MapCreator {
                 }
                 else if (matrix[x][y].ID==6 ){
                     System.out.print("♀");
+                }
+                else if (matrix[x][y].ID==7 ){
+                    System.out.print("┼");
                 }
             }       
             System.out.println("\n");

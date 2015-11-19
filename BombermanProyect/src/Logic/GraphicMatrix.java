@@ -28,6 +28,7 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     int itemSize;
     MapCreator map;
     Timer timer = new Timer();;
+    BalloonMovement b = new BalloonMovement();
     
     
     public GraphicMatrix(MapCreator map,int size,int itemSize) {
@@ -110,7 +111,7 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         } 
         
         
-        BalloonMovement b = new BalloonMovement();
+        
         b.start();
         
         

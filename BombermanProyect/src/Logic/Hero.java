@@ -41,8 +41,14 @@ public class Hero extends Element{
                 
         } 
         
-        if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX-1].ID==12){
+        else if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX-1].ID==12){
             globals.getGraphic().dispose();
+            Graphic.End end = new End();
+            end.setVisible(true);                           
+        }
+        else if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX-1].ID==5||globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX-1].ID==6){
+            globals.getGraphic().dispose();
+            globals.getGraphic().b.stopable=false;
             Graphic.End end = new End();
             end.setVisible(true);                           
         }
@@ -63,8 +69,14 @@ public class Hero extends Element{
                 globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX]=globals.getLogic().getHero();
                 //globals.getLogic().printAll();
         }
-         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX+1].ID==12){
+         else if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX+1].ID==12){
             globals.getGraphic().dispose();
+            Graphic.End end = new End();
+            end.setVisible(true);                           
+        }
+         else if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX+1].ID==5||globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX+1].ID==6){
+            globals.getGraphic().dispose();
+            globals.getGraphic().b.stopable=false;
             Graphic.End end = new End();
             end.setVisible(true);                           
         }
@@ -84,8 +96,14 @@ public class Hero extends Element{
                 globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX]=globals.getLogic().getHero();
                 //globals.getLogic().printAll();
         }
-         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY+1][globals.getGraphic().heroX].ID==12){
+         else  if(globals.getLogic().getMatrix()[globals.getGraphic().heroY+1][globals.getGraphic().heroX].ID==12){
             globals.getGraphic().dispose();
+            Graphic.End end = new End();
+            end.setVisible(true);                           
+        }
+         else  if(globals.getLogic().getMatrix()[globals.getGraphic().heroY+1][globals.getGraphic().heroX].ID==5||globals.getLogic().getMatrix()[globals.getGraphic().heroY+1][globals.getGraphic().heroX].ID==6){
+            globals.getGraphic().dispose();
+            globals.getGraphic().b.stopable=false;
             Graphic.End end = new End();
             end.setVisible(true);                           
         }
@@ -105,10 +123,16 @@ public class Hero extends Element{
                 globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX]=globals.getLogic().getHero();
                 //globals.getLogic().printAll();
         }
-         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY-1 ][globals.getGraphic().heroX].ID==12){
+         else  if(globals.getLogic().getMatrix()[globals.getGraphic().heroY-1 ][globals.getGraphic().heroX].ID==12){
             globals.getGraphic().dispose();
             Graphic.End end = new End();
             end.setVisible(true);                           
+        }
+         else if(globals.getLogic().getMatrix()[globals.getGraphic().heroY-1 ][globals.getGraphic().heroX].ID==5||globals.getLogic().getMatrix()[globals.getGraphic().heroY-1 ][globals.getGraphic().heroX].ID==6){
+            globals.getGraphic().dispose();
+            globals.getGraphic().b.stopable=false;
+            Graphic.End end = new End();
+            end.setVisible(true);
         }
     }
     

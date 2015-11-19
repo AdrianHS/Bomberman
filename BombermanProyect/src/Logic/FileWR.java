@@ -64,7 +64,7 @@ public class FileWR {
             while((linea=br.readLine())!=null){
                 jTextArea1.append(linea+ "\n");
                 
-                System.out.println(linea);
+                //System.out.println(linea);
             }
             
             br.close();

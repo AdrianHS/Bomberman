@@ -30,6 +30,43 @@ public class BoomOperations extends Thread{
             int y = globals.getGraphic().heroY;
             
             Thread.sleep(3000);
+            globals.getGraphic().matrix[x][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
+            globals.getLogic().getMatrix()[y][x]=new Blank();
+            
+            if(globals.getLogic().getMatrix()[y][x+1].ID!=1&&globals.getLogic().getMatrix()[y][x+1].ID!=7&&globals.getLogic().getMatrix()[y][x+1].ID!=8&&globals.getLogic().getMatrix()[y][x+1].ID!=9&&globals.getLogic().getMatrix()[y][x+1].ID!=10&&globals.getLogic().getMatrix()[y][x+1].ID!=11&&globals.getLogic().getMatrix()[y][x+1].ID!=12){
+                globals.getGraphic().matrix[x+1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/fire1.png"));
+                globals.getLogic().getMatrix()[y][x+1]=new Blank();
+            } 
+            if(globals.getLogic().getMatrix()[y][x-1].ID!=1&&globals.getLogic().getMatrix()[y][x-1].ID!=7&&globals.getLogic().getMatrix()[y][x-1].ID!=8&&globals.getLogic().getMatrix()[y][x-1].ID!=9&&globals.getLogic().getMatrix()[y][x-1].ID!=10&&globals.getLogic().getMatrix()[y][x-1].ID!=11&&globals.getLogic().getMatrix()[y][x-1].ID!=12){
+                globals.getGraphic().matrix[x-1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/fire1.png"));
+                globals.getLogic().getMatrix()[y][x-1]=new Blank();
+            } 
+            if(globals.getLogic().getMatrix()[y+1][x].ID!=1&&globals.getLogic().getMatrix()[y+1][x].ID!=7&&globals.getLogic().getMatrix()[y+1][x].ID!=8&&globals.getLogic().getMatrix()[y+1][x].ID!=9&&globals.getLogic().getMatrix()[y+1][x].ID!=10&&globals.getLogic().getMatrix()[y+1][x].ID!=11&&globals.getLogic().getMatrix()[y+1][x].ID!=12){
+                globals.getGraphic().matrix[x][y+1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/fire2.png"));
+                globals.getLogic().getMatrix()[y+1][x]=new Blank();
+            } 
+            if(globals.getLogic().getMatrix()[y-1][x].ID!=1&&globals.getLogic().getMatrix()[y-1][x].ID!=7&&globals.getLogic().getMatrix()[y-1][x].ID!=8&&globals.getLogic().getMatrix()[y-1][x].ID!=9&&globals.getLogic().getMatrix()[y-1][x].ID!=10&&globals.getLogic().getMatrix()[y-1][x].ID!=11&&globals.getLogic().getMatrix()[y-1][x].ID!=12 ){
+                globals.getGraphic().matrix[x][y-1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/fire2.png"));
+                globals.getLogic().getMatrix()[y-1][x]=new Blank();
+            } 
+            Thread.sleep(500);
+            if(globals.getLogic().getMatrix()[y][x+1].ID!=1&&globals.getLogic().getMatrix()[y][x+1].ID!=7&&globals.getLogic().getMatrix()[y][x+1].ID!=8&&globals.getLogic().getMatrix()[y][x+1].ID!=9&&globals.getLogic().getMatrix()[y][x+1].ID!=10&&globals.getLogic().getMatrix()[y][x+1].ID!=11&&globals.getLogic().getMatrix()[y][x+1].ID!=12){
+                globals.getGraphic().matrix[x+1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
+           
+            } 
+            if(globals.getLogic().getMatrix()[y][x-1].ID!=1&&globals.getLogic().getMatrix()[y][x-1].ID!=7&&globals.getLogic().getMatrix()[y][x-1].ID!=8&&globals.getLogic().getMatrix()[y][x-1].ID!=9&&globals.getLogic().getMatrix()[y][x-1].ID!=10&&globals.getLogic().getMatrix()[y][x-1].ID!=11&&globals.getLogic().getMatrix()[y][x-1].ID!=12){
+                globals.getGraphic().matrix[x-1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
+                
+            } 
+            if(globals.getLogic().getMatrix()[y+1][x].ID!=1&&globals.getLogic().getMatrix()[y+1][x].ID!=7&&globals.getLogic().getMatrix()[y+1][x].ID!=8&&globals.getLogic().getMatrix()[y+1][x].ID!=9&&globals.getLogic().getMatrix()[y+1][x].ID!=10&&globals.getLogic().getMatrix()[y+1][x].ID!=11&&globals.getLogic().getMatrix()[y+1][x].ID!=12){
+                globals.getGraphic().matrix[x][y+1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
+                
+            } 
+            if(globals.getLogic().getMatrix()[y-1][x].ID!=1&&globals.getLogic().getMatrix()[y-1][x].ID!=7&&globals.getLogic().getMatrix()[y-1][x].ID!=8&&globals.getLogic().getMatrix()[y-1][x].ID!=9&&globals.getLogic().getMatrix()[y-1][x].ID!=10&&globals.getLogic().getMatrix()[y-1][x].ID!=11&&globals.getLogic().getMatrix()[y-1][x].ID!=12 ){
+                globals.getGraphic().matrix[x][y-1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
+                
+            } 
+            
             //Items
             if(globals.getLogic().getMatrix()[y][x+1].ID==8){
                 globals.getLogic().getMatrix()[y][x+1].ID=10;
@@ -86,10 +123,21 @@ public class BoomOperations extends Thread{
                 
                 globals.getLogic().getMatrix()[y+1][x]=new Blank();
             }
-            globals.getGraphic().matrix[x][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
-            globals.getLogic().getMatrix()[y][x]=new Blank();
             
             
+            //If hits the hero.
+            if(globals.getLogic().getMatrix()[y][x+1].ID==4){
+                
+            } 
+            if(globals.getLogic().getMatrix()[y][x-1].ID==4){
+                
+            } 
+            if(globals.getLogic().getMatrix()[y+1][x].ID==4){
+                
+            } 
+            if(globals.getLogic().getMatrix()[y-1][x].ID==4){
+                
+            } 
             
             //This make sure that they are more enemies
             boolean enemies=false;

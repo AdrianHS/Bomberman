@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -26,7 +27,10 @@ public class End extends javax.swing.JFrame {
      * Creates new form Final
      */
     public End() {
-        
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Bomberman");
+        setIconImage(new ImageIcon(getClass().getResource("/Images/Hero2.png")).getImage());
         initComponents();
         globals.getGraphic().getTimer().setTiming(false);
         int min = globals.getGraphic().getTimer().getMinutos();

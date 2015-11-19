@@ -34,7 +34,7 @@ public class BalloonMovement extends Thread {
                             if(globals.getLogic().getMatrix()[x][y].ID==5){
                                 Random r1 = new Random();
                                 int mov = r1.nextInt(4);
-                                System.out.println(mov);
+                                //System.out.println(mov);
                                 if(mov==0 && globals.getLogic().getMatrix()[x][y-1].ID==2){
                                     globals.getLogic().getMatrix()[x][y]= new Blank();
                                     globals.getLogic().getMatrix()[x][y-1]= new EnemyBalloon();

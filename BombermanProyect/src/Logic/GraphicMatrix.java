@@ -107,6 +107,8 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
             
             
         b.start();
+        Timer timer = new Timer();
+        timer.start();
     }
     
     /**

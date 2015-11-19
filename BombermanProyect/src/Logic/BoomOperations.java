@@ -10,7 +10,7 @@ import java.awt.Image;
 import java.net.URL;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import jdk.nashorn.internal.objects.Global;
+
 
 /**
  *

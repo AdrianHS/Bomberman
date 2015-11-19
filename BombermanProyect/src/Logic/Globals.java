@@ -27,19 +27,22 @@ public class Globals {
     private int barrierBlockEasy;
     private int balloonsEasy;
     private int barrelsEasy;
-    private int itemSizeEasy;   
+    private int itemSizeEasy;
+    private int itemsEasy;
     
     private int matrizSizeIntermediate;
     private int barrierBlockIntermediate;
     private int balloonsIntermediate;
     private int barrelsIntermediate;
-    private int itemSizeIntermediate; 
+    private int itemSizeIntermediate;
+    private int itemsIntermediate;
     
     private int matrizSizeDifficult;
     private int barrierBlockDifficult;
     private int balloonsDifficult;
     private int barrelsDifficult;
     private int itemSizeDifficult; 
+    private int itemsDifficult;
     
     
     private Globals() {
@@ -56,18 +59,21 @@ public class Globals {
             instance.balloonsEasy = 6;
             instance.barrelsEasy = 3;
             instance.itemSizeEasy = 42;
+            instance.itemsEasy = 3;
             
             instance.matrizSizeIntermediate = 21;
             instance.barrierBlockIntermediate = 75;
             instance.balloonsIntermediate = 10;
             instance.barrelsIntermediate =  8;
             instance.itemSizeIntermediate = 30;
+            instance.itemsIntermediate = 2;
             
             instance.matrizSizeDifficult = 25;
             instance.barrierBlockDifficult = 120;
             instance.balloonsDifficult = 15;
             instance.barrelsDifficult = 12;
             instance.itemSizeDifficult = 25;
+            instance.itemsDifficult = 1;
           
             instance.logic=null;
             instance.graphic=null;
@@ -230,5 +236,30 @@ public class Globals {
     public void setItemSizeDifficult(int itemSizeDifficult) {
         instance.itemSizeDifficult = itemSizeDifficult;
     }
+
+    public int getItemsEasy() {
+        return itemsEasy;
+    }
+
+    public void setItemsEasy(int itemsEasy) {
+        this.itemsEasy = itemsEasy;
+    }
+
+    public int getItemsIntermediate() {
+        return itemsIntermediate;
+    }
+
+    public void setItemsIntermediate(int itemsIntermediate) {
+        this.itemsIntermediate = itemsIntermediate;
+    }
+
+    public int getItemsDifficult() {
+        return itemsDifficult;
+    }
+
+    public void setItemsDifficult(int itemsDifficult) {
+        this.itemsDifficult = itemsDifficult;
+    }
+    
   
 }

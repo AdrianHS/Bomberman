@@ -115,21 +115,21 @@ public class Principal extends javax.swing.JFrame {
     private void btnEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEasyActionPerformed
         factory.createGame(globals.getMatrizSizeEasy(),
                 globals.getBarrierBlockEasy(), globals.getBalloonsEasy(), 
-                globals.getBarrelsEasy(), globals.getItemSizeEasy());
+                globals.getBarrelsEasy(), globals.getItemSizeEasy(),globals.getItemsEasy());
         this.setVisible(false);
     }//GEN-LAST:event_btnEasyActionPerformed
 
     private void btnIntermediateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIntermediateActionPerformed
         factory.createGame(globals.getMatrizSizeIntermediate(), 
                 globals.getBarrierBlockIntermediate(), globals.getBalloonsIntermediate(),
-                globals.getBarrelsIntermediate(), globals.getItemSizeIntermediate());
+                globals.getBarrelsIntermediate(), globals.getItemSizeIntermediate(),globals.getItemsIntermediate());
         this.setVisible(false);
     }//GEN-LAST:event_btnIntermediateActionPerformed
 
     private void btnDifficultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDifficultActionPerformed
         factory.createGame(globals.getMatrizSizeDifficult(),
                 globals.getBarrierBlockDifficult(), globals.getBalloonsDifficult(), 
-                globals.getBarrelsDifficult(), globals.getItemSizeDifficult());
+                globals.getBarrelsDifficult(), globals.getItemSizeDifficult(),globals.getItemsDifficult());
         this.setVisible(false);
     }//GEN-LAST:event_btnDifficultActionPerformed
 

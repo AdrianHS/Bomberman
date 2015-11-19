@@ -13,17 +13,17 @@ package Logic;
 public class Factory implements InterfaceGame{
 
     @Override
-    public Game createGame(int size, int block, int balloons, int barrels, int itemSize) {
+    public Game createGame(int size, int block, int balloons, int barrels, int itemSize,int items) {
         if(size ==15){
-            Game game = new Game(size,block,balloons,barrels,itemSize);
+            Game game = new Game(size,block,balloons,barrels,itemSize,items);
             
         }
         else if(size ==21){
-            Game game = new Game(size,block,balloons,barrels,itemSize);
+            Game game = new Game(size,block,balloons,barrels,itemSize,items);
             
         }
         else if(size ==25){
-            Game game = new Game(size,block,balloons,barrels,itemSize);
+            Game game = new Game(size,block,balloons,barrels,itemSize,items);
             
         }
         return null;

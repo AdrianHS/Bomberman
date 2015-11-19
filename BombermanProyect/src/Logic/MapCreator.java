@@ -28,7 +28,7 @@ public class MapCreator {
     
     
     
-    public void LogicMatrix(int size, int blocQ,int balloons,int barrels){ 
+    public void LogicMatrix(int size, int blocQ,int balloons,int barrels,int items){ 
         this.size=size;
         matrix = new Element[size][size];
         SolidBloc bloc = new SolidBloc();
@@ -69,7 +69,7 @@ public class MapCreator {
         /**
         * Put the BarrierBlocs
         */
-        int cantBuffs = 1;
+        int cantBuffs = items;
         boolean door = true;
         
         for(int cont = blocQ; cont != 0;){

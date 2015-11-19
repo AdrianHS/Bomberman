@@ -12,6 +12,6 @@ package Logic;
  */
 public interface InterfaceGame {
     
-    public Game createGame(int size, int block, int balloons, int barrels, int itemSize);
+    public Game createGame(int size, int block, int balloons, int barrels, int itemSize,int items);
  
 }

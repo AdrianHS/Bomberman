@@ -30,11 +30,11 @@ public class Game {//extends javax.swing.JFrame implements KeyListener{
     Globals globals = Globals.getInstance();
     
     
-    public Game(int size, int block, int balloons, int barrels, int itemSize) {
+    public Game(int size, int block, int balloons, int barrels, int itemSize,int items) {
         
         //addKeyListener(this);
         logicMap = new MapCreator();
-        logicMap.LogicMatrix(size,block,balloons,barrels);
+        logicMap.LogicMatrix(size,block,balloons,barrels,items);
         
         graphicMap = new GraphicMatrix(logicMap,size,itemSize); 
         graphicMap.setSize(648, 667);

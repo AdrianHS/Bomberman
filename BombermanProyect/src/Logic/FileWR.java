@@ -26,32 +26,77 @@ import java.io.PrintWriter;
  * @author _ADRIAN_
  */
 public class FileWR {
+    Globals globals = Globals.getInstance();
     public void crear(String name,String min,String seg, String l){
         File f;
+        if(globals.getLogic().getMatrix().length==15){
+            f = new File("SocoresEasy.txt");
 
-        f = new File("Socores.txt");
+            FileWriter escribir;
+            BufferedWriter bw;
+            PrintWriter wr;
 
-        FileWriter escribir;
-        BufferedWriter bw;
-        PrintWriter wr;
+            try{
+                if(f.exists()) {
+                    bw = new BufferedWriter(new FileWriter(f, true));//el true es para que no pise el archivo
+                    bw.write(name+" "+min+":"+seg+l);
+                    bw.close();
+                }else {
+                    bw = new BufferedWriter(new FileWriter(f));
+                    bw.write(name+" "+min+":"+seg+l);
+                    bw.close();
+                }    
 
-        try{
-            if(f.exists()) {
-                bw = new BufferedWriter(new FileWriter(f, true));//el true es para que no pise el archivo
-                bw.write(name+" "+min+":"+seg+l);
-                bw.close();
-            }else {
-                bw = new BufferedWriter(new FileWriter(f));
-                bw.write(name+" "+min+":"+seg+l);
-                bw.close();
-            }    
-            
 
-        }catch(IOException e){System.out.println("Error: "+e.getMessage());};
+            }catch(IOException e){System.out.println("Error: "+e.getMessage());};
+        
+        }
+        else if(globals.getLogic().getMatrix().length==21){
+            f = new File("SocoresMedium.txt");
+
+            FileWriter escribir;
+            BufferedWriter bw;
+            PrintWriter wr;
+
+            try{
+                if(f.exists()) {
+                    bw = new BufferedWriter(new FileWriter(f, true));//el true es para que no pise el archivo
+                    bw.write(name+" "+min+":"+seg+l);
+                    bw.close();
+                }else {
+                    bw = new BufferedWriter(new FileWriter(f));
+                    bw.write(name+" "+min+":"+seg+l);
+                    bw.close();
+                }    
+
+
+            }catch(IOException e){System.out.println("Error: "+e.getMessage());};
+        
+        }
+        else if(globals.getLogic().getMatrix().length==25){
+            f = new File("SocoresDifficul.txt");
+
+            FileWriter escribir;
+            BufferedWriter bw;
+            PrintWriter wr;
+
+            try{
+                if(f.exists()) {
+                    bw = new BufferedWriter(new FileWriter(f, true));//el true es para que no pise el archivo
+                    bw.write(name+" "+min+":"+seg+l);
+                    bw.close();
+                }else {
+                    bw = new BufferedWriter(new FileWriter(f));
+                    bw.write(name+" "+min+":"+seg+l);
+                    bw.close();
+                }    
+
+
+            }catch(IOException e){System.out.println("Error: "+e.getMessage());};
+        
+        }
     }
-    
-    
-    
+
     public void leer(String name){
         File archivos;
         FileReader fr;

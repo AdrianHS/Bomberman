@@ -176,7 +176,7 @@ public class BoomOperations extends Thread{
             }
             if(enemies==false){
                 globals.getLogic().getMatrix()[globals.getLogic().xDoor][globals.getLogic().yDoor].ID=12;
-                globals.getGraphic().getMatrix()[globals.getLogic().yDoor][globals.getLogic().xDoor].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/doorOpen  .png"));
+                globals.getGraphic().getMatrix()[globals.getLogic().yDoor][globals.getLogic().xDoor].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/doorOpen.png"));
                 
             }
             

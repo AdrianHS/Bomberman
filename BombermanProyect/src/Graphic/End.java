@@ -163,8 +163,15 @@ public class End extends javax.swing.JFrame {
     private void btnPositionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPositionsActionPerformed
         jTextArea1.removeAll();
         FileWR newFile = new FileWR();
-        newFile.leer("Socores.txt");
-        
+        if(globals.getLogic().getMatrix().length==15){
+            newFile.leer("SocoresEasy.txt");
+        }
+        else if(globals.getLogic().getMatrix().length==21){
+            newFile.leer("SocoresMedium.txt");
+        }
+        else if(globals.getLogic().getMatrix().length==25){
+            newFile.leer("SocoresDifficul.txt");
+        }
         
         
         

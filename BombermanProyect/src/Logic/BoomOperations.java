@@ -6,6 +6,7 @@
 package Logic;
 
 
+import Graphic.End;
 import java.awt.Image;
 import java.net.URL;
 import java.util.logging.Logger;
@@ -33,11 +34,48 @@ public class BoomOperations extends Thread{
             globals.getGraphic().matrix[x][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
             globals.getLogic().getMatrix()[y][x]=new Blank();
             
+            //Makes sure if the hero its on the bomb.
+            if(globals.getGraphic().heroX==x&&globals.getGraphic().heroY==y){
+                globals.getGraphic().dispose();
+                Graphic.End end = new End();
+                end.setVisible(true);
+                globals.getGraphic().b.stopable=false;
+            }
+            
+            
+            //If hits the hero.
+            if(globals.getLogic().getMatrix()[y][x+1].ID==4){
+                globals.getGraphic().dispose();
+                Graphic.End end = new End();
+                end.setVisible(true);
+                globals.getGraphic().b.stopable=false;
+            } 
+            else if(globals.getLogic().getMatrix()[y][x-1].ID==4){
+                globals.getGraphic().dispose();
+                Graphic.End end = new End();
+                end.setVisible(true);
+                globals.getGraphic().b.stopable=false;
+            } 
+            else if(globals.getLogic().getMatrix()[y+1][x].ID==4){
+                globals.getGraphic().dispose();
+                Graphic.End end = new End();
+                end.setVisible(true);
+                globals.getGraphic().b.stopable=false;
+            } 
+            else if(globals.getLogic().getMatrix()[y-1][x].ID==4){
+                globals.getGraphic().dispose();
+                Graphic.End end = new End();
+                end.setVisible(true);
+                globals.getGraphic().b.stopable=false;
+            } 
+  
+            
+            //Fire Efect
             if(globals.getLogic().getMatrix()[y][x+1].ID!=1&&globals.getLogic().getMatrix()[y][x+1].ID!=7&&globals.getLogic().getMatrix()[y][x+1].ID!=8&&globals.getLogic().getMatrix()[y][x+1].ID!=9&&globals.getLogic().getMatrix()[y][x+1].ID!=10&&globals.getLogic().getMatrix()[y][x+1].ID!=11&&globals.getLogic().getMatrix()[y][x+1].ID!=12){
                 globals.getGraphic().matrix[x+1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/fire1.png"));
                 globals.getLogic().getMatrix()[y][x+1]=new Blank();
             } 
-            if(globals.getLogic().getMatrix()[y][x-1].ID!=1&&globals.getLogic().getMatrix()[y][x-1].ID!=7&&globals.getLogic().getMatrix()[y][x-1].ID!=8&&globals.getLogic().getMatrix()[y][x-1].ID!=9&&globals.getLogic().getMatrix()[y][x-1].ID!=10&&globals.getLogic().getMatrix()[y][x-1].ID!=11&&globals.getLogic().getMatrix()[y][x-1].ID!=12){
+             if(globals.getLogic().getMatrix()[y][x-1].ID!=1&&globals.getLogic().getMatrix()[y][x-1].ID!=7&&globals.getLogic().getMatrix()[y][x-1].ID!=8&&globals.getLogic().getMatrix()[y][x-1].ID!=9&&globals.getLogic().getMatrix()[y][x-1].ID!=10&&globals.getLogic().getMatrix()[y][x-1].ID!=11&&globals.getLogic().getMatrix()[y][x-1].ID!=12){
                 globals.getGraphic().matrix[x-1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/fire1.png"));
                 globals.getLogic().getMatrix()[y][x-1]=new Blank();
             } 
@@ -101,7 +139,7 @@ public class BoomOperations extends Thread{
                 globals.getLogic().getMatrix()[y-1][x].ID=11;
                 globals.getGraphic().matrix[x][y-1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/door.png"));
             } 
-            //All, enemies and blocks
+            //Enemies and blocks
             if(globals.getLogic().getMatrix()[y][x+1].ID==3||globals.getLogic().getMatrix()[y][x+1].ID==5||globals.getLogic().getMatrix()[y][x+1].ID==6){
             
                 globals.getGraphic().matrix[x+1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
@@ -125,20 +163,6 @@ public class BoomOperations extends Thread{
             }
             
             
-            //If hits the hero.
-            if(globals.getLogic().getMatrix()[y][x+1].ID==4){
-                
-            } 
-            if(globals.getLogic().getMatrix()[y][x-1].ID==4){
-                
-            } 
-            if(globals.getLogic().getMatrix()[y+1][x].ID==4){
-                
-            } 
-            if(globals.getLogic().getMatrix()[y-1][x].ID==4){
-                
-            } 
-            
             //This make sure that they are more enemies
             boolean enemies=false;
             for (int x1=0; x1 < globals.getLogic().getMatrix().length; x1++) {
@@ -152,7 +176,7 @@ public class BoomOperations extends Thread{
             }
             if(enemies==false){
                 globals.getLogic().getMatrix()[globals.getLogic().xDoor][globals.getLogic().yDoor].ID=12;
-                globals.getGraphic().getMatrix()[globals.getLogic().yDoor][globals.getLogic().xDoor].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/door.png"));
+                globals.getGraphic().getMatrix()[globals.getLogic().yDoor][globals.getLogic().xDoor].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/doorOpen  .png"));
                 
             }
             

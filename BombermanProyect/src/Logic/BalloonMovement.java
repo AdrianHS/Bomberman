@@ -45,6 +45,7 @@ public class BalloonMovement extends Thread {
                                     Graphic.End end = new End();
                                     end.setVisible(true);
                                     stopable=false;
+                                    
                                 }
                                 else if(mov==1 && globals.getLogic().getMatrix()[x][y+1].ID==4){
                                    globals.getGraphic().dispose();

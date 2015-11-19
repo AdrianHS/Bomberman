@@ -48,33 +48,33 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jLabelGame = new javax.swing.JLabel();
+        btnEasy = new javax.swing.JButton();
+        btnIntermediate = new javax.swing.JButton();
+        btnDifficult = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Game");
+        jLabelGame.setText("Game");
 
-        jButton1.setText("Easy");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnEasy.setText("Easy");
+        btnEasy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnEasyActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Intermediate");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnIntermediate.setText("Intermediate");
+        btnIntermediate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnIntermediateActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Difficult");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnDifficult.setText("Difficult");
+        btnDifficult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnDifficultActionPerformed(evt);
             }
         });
 
@@ -86,52 +86,52 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabelGame, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(btnEasy)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
+                        .addComponent(btnIntermediate)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)))
+                        .addComponent(btnDifficult)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel1)
+                .addComponent(jLabelGame)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btnEasy)
+                    .addComponent(btnIntermediate)
+                    .addComponent(btnDifficult))
                 .addGap(74, 74, 74))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEasyActionPerformed
         factory.createGame(globals.getMatrizSizeEasy(),
                 globals.getBarrierBlockEasy(), globals.getBalloonsEasy(), 
                 globals.getBarrelsEasy(), globals.getItemSizeEasy());
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnEasyActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnIntermediateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIntermediateActionPerformed
         factory.createGame(globals.getMatrizSizeIntermediate(), 
                 globals.getBarrierBlockIntermediate(), globals.getBalloonsIntermediate(),
                 globals.getBarrelsIntermediate(), globals.getItemSizeIntermediate());
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnIntermediateActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnDifficultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDifficultActionPerformed
         factory.createGame(globals.getMatrizSizeDifficult(),
                 globals.getBarrierBlockDifficult(), globals.getBalloonsDifficult(), 
                 globals.getBarrelsDifficult(), globals.getItemSizeDifficult());
         this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnDifficultActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,9 +169,9 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnDifficult;
+    private javax.swing.JButton btnEasy;
+    private javax.swing.JButton btnIntermediate;
+    private javax.swing.JLabel jLabelGame;
     // End of variables declaration//GEN-END:variables
 }

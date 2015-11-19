@@ -19,7 +19,9 @@ public class BalloonMovement extends Thread {
     Globals globals = Globals.getInstance();
     public BalloonMovement() {
     }
-    
+    /**
+    * Method and thread to move balloons
+    */
     @Override
     public void run(){
        

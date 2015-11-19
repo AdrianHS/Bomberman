@@ -20,6 +20,9 @@ public class BoomOperations extends Thread{
     Globals globals = Globals.getInstance();
     public BoomOperations() {
     }
+    /**
+    * Method and thread to move bombs
+    */
     @Override
     public void run(){
         try{

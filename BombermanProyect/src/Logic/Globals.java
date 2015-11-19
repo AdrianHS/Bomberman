@@ -53,20 +53,20 @@ public class Globals {
             
             instance.matrizSizeEasy = 15;
             instance.barrierBlockEasy = 35;
-            instance.balloonsEasy = 5;
+            instance.balloonsEasy = 6;
             instance.barrelsEasy = 3;
             instance.itemSizeEasy = 42;
             
             instance.matrizSizeIntermediate = 21;
             instance.barrierBlockIntermediate = 75;
-            instance.balloonsIntermediate = 8;
-            instance.barrelsIntermediate =  5;
+            instance.balloonsIntermediate = 10;
+            instance.barrelsIntermediate =  8;
             instance.itemSizeIntermediate = 30;
             
             instance.matrizSizeDifficult = 25;
             instance.barrierBlockDifficult = 120;
-            instance.balloonsDifficult = 12;
-            instance.barrelsDifficult = 10;
+            instance.balloonsDifficult = 15;
+            instance.barrelsDifficult = 12;
             instance.itemSizeDifficult = 25;
           
             instance.logic=null;

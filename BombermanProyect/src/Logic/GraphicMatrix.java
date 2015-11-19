@@ -101,6 +101,12 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
                 }
             }            
         } 
+        
+        
+        BalloonMovement b = new BalloonMovement();
+            
+            
+        b.start();
     }
     
     /**
@@ -144,52 +150,21 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
             matrix[heroX][heroY].setIcon(setIcon(itemSize,"/Images/BombAndHero1.png"));
             matrix[heroX][heroY].setIcon(setIcon(itemSize,"/Images/BombAndHero1.png"));
             
-            map.getMatrix()[heroY][heroX] = bomb;
+            //Sound s = new Sound();
+            //s.boom();
             
-            
-           BoomOperations t = new BoomOperations();
-           t.start();
+            map.getMatrix()[heroY][heroX] = bomb;           
+            BoomOperations t = new BoomOperations();
+            t.start();
             
             //matrix[Q][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
             //map.getMatrix()[W][Q]=new Blank();
             
+            
+            
             //This moves the balloons......
             /*
-            for (int x = 0; x < 15; x++) {
-                for (int y = 0; y < 15; y++) {
-                    if(map.getMatrix()[x][y].ID==5){
-                        Random r1 = new Random();
-                        int mov = r1.nextInt(4);
-                        System.out.println(mov);
-                        if(mov==0 && map.getMatrix()[x][y-1].ID==2){
-                            map.getMatrix()[x][y]= new Blank();
-                            map.getMatrix()[x][y-1]= new EnemyBalloon();
-                            matrix[y][x].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-                            matrix[y-1][x].setIcon(setIcon(itemSize,"/Images/balloon.png"));
-                        }
-                        if(mov==1 && map.getMatrix()[x][y+1].ID==2){
-                            map.getMatrix()[x][y]= new Blank();
-                            map.getMatrix()[x][y+1]= new EnemyBalloon();
-                            matrix[y][x].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-                            matrix[y+1][x].setIcon(setIcon(itemSize,"/Images/balloon.png"));
-                        }
-                        if(mov==2 && map.getMatrix()[x-1][y].ID==2){
-                            map.getMatrix()[x][y]= new Blank();
-                            map.getMatrix()[x-1][y]= new EnemyBalloon();
-                            matrix[y][x].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-                            matrix[y][x-1].setIcon(setIcon(itemSize,"/Images/balloon.png"));
-                        }
-                        if(mov==3 && map.getMatrix()[x+1][y].ID==2){
-                            map.getMatrix()[x][y]= new Blank();
-                            map.getMatrix()[x+1][y]= new EnemyBalloon();
-                            matrix[y][x].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-                            matrix[y][x+1].setIcon(setIcon(itemSize,"/Images/balloon.png"));
-                        }
-                       
-             
-                    }
-                }           
-            }
+            
             */
 
         }

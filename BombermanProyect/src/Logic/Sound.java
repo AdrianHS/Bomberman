@@ -22,8 +22,13 @@ public class Sound {
     * To take the direction of sound
     */
     AudioClip player;
+    
     public Sound() {
-        player = java.applet.Applet.newAudioClip(getClass().getResource("/sonido/musicStart.wav"));
+        //player = java.applet.Applet.newAudioClip(getClass().getResource("/sonido/musicStart.wav"));
+        //player.play();
+    }
+    public void boom(){
+        player = java.applet.Applet.newAudioClip(getClass().getResource("/sonido/bom.wav"));
         player.play();
     }
 

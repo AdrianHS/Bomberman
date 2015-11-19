@@ -147,26 +147,8 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
             map.getMatrix()[heroY][heroX] = bomb;
             
             
-            if(map.getMatrix()[heroY][heroX+1].ID==3){
-                matrix[heroX+1][heroY].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-                
-                map.getMatrix()[heroY][heroX+1]=new Blank();
-            }
-            if(map.getMatrix()[heroY][heroX-1].ID==3){
-                matrix[heroX-1][heroY].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-                
-                map.getMatrix()[heroY][heroX-1]=new Blank();
-            }
-            if(map.getMatrix()[heroY-1][heroX].ID==3){
-                matrix[heroX][heroY-1].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-                
-                map.getMatrix()[heroY-1][heroX]=new Blank();
-            }
-            if(map.getMatrix()[heroY+1][heroX].ID==3){
-                matrix[heroX][heroY+1].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-                
-                map.getMatrix()[heroY+1][heroX]=new Blank();
-            }
+           BoomOperations t = new BoomOperations();
+           t.start();
             
             //matrix[Q][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
             //map.getMatrix()[W][Q]=new Blank();

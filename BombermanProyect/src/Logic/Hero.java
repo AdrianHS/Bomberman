@@ -21,9 +21,7 @@ public class Hero extends Element{
         super(4);
        
     }
-    void putBomb(){
-        
-    }
+    
     void moveLeft(){
         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX-1].ID==2){
                 if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX].ID==7){
@@ -39,6 +37,7 @@ public class Hero extends Element{
                 globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX]=globals.getLogic().getHero();
                 globals.getGraphic().matrix[globals.getGraphic().heroX][globals.getGraphic().heroY].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/Hero1.png"));
                 //globals.getLogic().printAll();
+                
         } 
         
     }

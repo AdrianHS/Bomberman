@@ -59,6 +59,7 @@ public class BalloonMovement extends Thread {
                                     globals.getGraphic().matrix[y][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
                                     globals.getGraphic().matrix[y][x+1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/balloon.png"));
                                 }
+                                
                             }
 
                         }

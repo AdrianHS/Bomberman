@@ -27,22 +27,22 @@ public class BoomOperations extends Thread{
             int y = globals.getGraphic().heroY;
             
             Thread.sleep(3000);
-             if(globals.getLogic().getMatrix()[y][x+1].ID==3){
+             if(globals.getLogic().getMatrix()[y][x+1].ID==3||globals.getLogic().getMatrix()[y][x+1].ID==5||globals.getLogic().getMatrix()[y][x+1].ID==6){
                 globals.getGraphic().matrix[x+1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
                 
                 globals.getLogic().getMatrix()[y][x+1]=new Blank();
             }
-            if(globals.getLogic().getMatrix()[y][x-1].ID==3){
+            if(globals.getLogic().getMatrix()[y][x-1].ID==3||globals.getLogic().getMatrix()[y][x-1].ID==5||globals.getLogic().getMatrix()[y][x-1].ID==6){
                 globals.getGraphic().matrix[x-1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
                 
                 globals.getLogic().getMatrix()[y][x-1]=new Blank();
             }
-            if(globals.getLogic().getMatrix()[y-1][x].ID==3){
+            if(globals.getLogic().getMatrix()[y-1][x].ID==3||globals.getLogic().getMatrix()[y-1][x].ID==5||globals.getLogic().getMatrix()[y-1][x].ID==6){
                 globals.getGraphic().matrix[x][y-1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
                 
                 globals.getLogic().getMatrix()[y-1][x]=new Blank();
             }
-            if(globals.getLogic().getMatrix()[y+1][x].ID==3){
+            if(globals.getLogic().getMatrix()[y+1][x].ID==3||globals.getLogic().getMatrix()[y+1][x].ID==5||globals.getLogic().getMatrix()[y+1][x].ID==6){
                 globals.getGraphic().matrix[x][y+1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
                 
                 globals.getLogic().getMatrix()[y+1][x]=new Blank();

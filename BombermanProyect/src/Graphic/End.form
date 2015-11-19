@@ -29,7 +29,7 @@
                   <Group type="102" attributes="0">
                       <Component id="jLabelTime" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="time" min="-2" pref="48" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnPositions" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -55,7 +55,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnPositions" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelTime" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="time" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="39" max="32767" attributes="0"/>
           </Group>
@@ -80,7 +80,7 @@
         <Property name="text" type="java.lang.String" value="Time"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="time">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>

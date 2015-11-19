@@ -6,17 +6,24 @@
 
 package Graphic;
 
+import Logic.Globals;
+
 /**
  *
  * @author _ADRIAN_
  */
 public class End extends javax.swing.JFrame {
-
+    Logic.Globals globals = Globals.getInstance();
     /**
      * Creates new form Final
      */
     public End() {
+        
         initComponents();
+        globals.getGraphic().getTimer().setTiming(false);
+        int min = globals.getGraphic().getTimer().getMinutos();
+        int seg = globals.getGraphic().getTimer().getSegundo();
+        time.setText(min+":"+seg);
     }
 
     /**
@@ -32,7 +39,7 @@ public class End extends javax.swing.JFrame {
         btnPositions = new javax.swing.JButton();
         texWrite = new javax.swing.JTextField();
         jLabelTime = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        time = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,7 +49,7 @@ public class End extends javax.swing.JFrame {
 
         jLabelTime.setText("Time");
 
-        jLabel3.setText("-");
+        time.setText("-");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -54,7 +61,7 @@ public class End extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabelTime, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnPositions))
                     .addGroup(layout.createSequentialGroup()
@@ -74,7 +81,7 @@ public class End extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPositions)
                     .addComponent(jLabelTime)
-                    .addComponent(jLabel3))
+                    .addComponent(time))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -118,9 +125,9 @@ public class End extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPositions;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelName;
     private javax.swing.JLabel jLabelTime;
     private javax.swing.JTextField texWrite;
+    private javax.swing.JLabel time;
     // End of variables declaration//GEN-END:variables
 }

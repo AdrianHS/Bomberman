@@ -5,6 +5,7 @@
  */
 package Logic;
 
+import Graphic.End;
 import java.awt.Image;
 import java.net.URL;
 import java.util.Random;
@@ -17,6 +18,7 @@ import javax.swing.ImageIcon;
  */
 public class BalloonMovement extends Thread {
     Globals globals = Globals.getInstance();
+    boolean stopable= true;
     public BalloonMovement() {
     }
     /**
@@ -28,7 +30,7 @@ public class BalloonMovement extends Thread {
         
         try {
             
-            while(true){
+            while(stopable){
                 Thread.sleep(1000);
                 
                 for (int x = 0; x < globals.getLogic().getMatrix().length; x++) {
@@ -37,30 +39,59 @@ public class BalloonMovement extends Thread {
                                 Random r1 = new Random();
                                 int mov = r1.nextInt(4);
                                 //System.out.println(mov);
-                                if(mov==0 && globals.getLogic().getMatrix()[x][y-1].ID==2){
-                                    globals.getLogic().getMatrix()[x][y]= new Blank();
-                                    globals.getLogic().getMatrix()[x][y-1]= new EnemyBalloon();
-                                    globals.getGraphic().matrix[y][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
-                                    globals.getGraphic().matrix[y-1][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/balloon.png"));
+                                
+                                if(mov==0 && globals.getLogic().getMatrix()[x][y-1].ID==4){
+                                    globals.getGraphic().dispose();
+                                    Graphic.End end = new End();
+                                    end.setVisible(true);
+                                    stopable=false;
                                 }
-                                else if(mov==1 && globals.getLogic().getMatrix()[x][y+1].ID==2){
-                                    globals.getLogic().getMatrix()[x][y]= new Blank();
-                                    globals.getLogic().getMatrix()[x][y+1]= new EnemyBalloon();
-                                    globals.getGraphic().matrix[y][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
-                                    globals.getGraphic().matrix[y+1][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/balloon.png"));
+                                else if(mov==1 && globals.getLogic().getMatrix()[x][y+1].ID==4){
+                                   globals.getGraphic().dispose();
+                                   Graphic.End end = new End();
+                                    end.setVisible(true);
+                                    stopable=false;
                                 }
-                                else if(mov==2 && globals.getLogic().getMatrix()[x-1][y].ID==2){
-                                    globals.getLogic().getMatrix()[x][y]= new Blank();
-                                    globals.getLogic().getMatrix()[x-1][y]= new EnemyBalloon();
-                                    globals.getGraphic().matrix[y][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
-                                    globals.getGraphic().matrix[y][x-1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/balloon.png"));
+                                else if(mov==2 && globals.getLogic().getMatrix()[x-1][y].ID==4){
+                                   globals.getGraphic().dispose();
+                                   Graphic.End end = new End();
+                                   end.setVisible(true);
+                                   stopable=false;
                                 }
-                                else if(mov==3 && globals.getLogic().getMatrix()[x+1][y].ID==2){
-                                    globals.getLogic().getMatrix()[x][y]= new Blank();
-                                    globals.getLogic().getMatrix()[x+1][y]= new EnemyBalloon();
-                                    globals.getGraphic().matrix[y][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
-                                    globals.getGraphic().matrix[y][x+1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/balloon.png"));
+                                else if(mov==3 && globals.getLogic().getMatrix()[x+1][y].ID==4){
+                                    globals.getGraphic().dispose();
+                                    Graphic.End end = new End();
+                                    end.setVisible(true);
+                                    stopable=false;
                                 }
+                                else{
+                                    if(mov==0 && globals.getLogic().getMatrix()[x][y-1].ID==2){
+                                        globals.getLogic().getMatrix()[x][y]= new Blank();
+                                        globals.getLogic().getMatrix()[x][y-1]= new EnemyBalloon();
+                                        globals.getGraphic().matrix[y][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
+                                        globals.getGraphic().matrix[y-1][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/balloon.png"));
+                                    }
+                                    else if(mov==1 && globals.getLogic().getMatrix()[x][y+1].ID==2){
+                                        globals.getLogic().getMatrix()[x][y]= new Blank();
+                                        globals.getLogic().getMatrix()[x][y+1]= new EnemyBalloon();
+                                        globals.getGraphic().matrix[y][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
+                                        globals.getGraphic().matrix[y+1][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/balloon.png"));
+                                    }
+                                    else if(mov==2 && globals.getLogic().getMatrix()[x-1][y].ID==2){
+                                        globals.getLogic().getMatrix()[x][y]= new Blank();
+                                        globals.getLogic().getMatrix()[x-1][y]= new EnemyBalloon();
+                                        globals.getGraphic().matrix[y][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
+                                        globals.getGraphic().matrix[y][x-1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/balloon.png"));
+                                    }
+                                    else if(mov==3 && globals.getLogic().getMatrix()[x+1][y].ID==2){
+                                        globals.getLogic().getMatrix()[x][y]= new Blank();
+                                        globals.getLogic().getMatrix()[x+1][y]= new EnemyBalloon();
+                                        globals.getGraphic().matrix[y][x].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
+                                        globals.getGraphic().matrix[y][x+1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/balloon.png"));
+                                    }
+                                
+                                }
+                                
                                 
                             }
 

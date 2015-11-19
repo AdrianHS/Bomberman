@@ -3,18 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Logic;
 
 /**
  *
- * @author _ADRIAN_
+ * @author AndrewJ
  */
-public class BarrierBloc extends Element{
+public class BarrelMovement extends Thread{
     
-    public BarrierBloc() {
-        super(3);
+    @Override
+    public void run(){
         
     }
-  
 }

@@ -20,6 +20,8 @@ public class MapCreator {
     Hero hero = new Hero();
     Element [][] matrix;
     int size;
+    int xDoor;
+    int yDoor;
    
     public MapCreator() {
     }
@@ -67,7 +69,7 @@ public class MapCreator {
         /**
         * Put the BarrierBlocs
         */
-        int cantBuffs = 3;
+        int cantBuffs = 1;
         boolean door = true;
         
         for(int cont = blocQ; cont != 0;){
@@ -84,11 +86,14 @@ public class MapCreator {
                 
                 
                 if(cantBuffs!=0){
-                    b.setBuff(1);
+                    b.ID=8;
                     cantBuffs--;
                 }
-                if(door||cantBuffs==0){
-                    b.setBuff(2);
+                else if(door && cantBuffs==0){
+                    b.ID=9;
+                    door=false;
+                    this.xDoor=q;
+                    this.yDoor=w;
                 }
                 cont--; 
             
@@ -199,6 +204,12 @@ public class MapCreator {
                     System.out.print("♀");
                 }
                 else if (matrix[x][y].ID==7 ){
+                    System.out.print("┼");
+                }
+                else if (matrix[x][y].ID==8 ){
+                    System.out.print("┼");
+                }
+                else if (matrix[x][y].ID==9 ){
                     System.out.print("┼");
                 }
             }       

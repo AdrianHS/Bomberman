@@ -27,6 +27,7 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     Bomb bomb = new Bomb();
     int itemSize;
     MapCreator map;
+    Timer timer = new Timer();;
     
     
     public GraphicMatrix(MapCreator map,int size,int itemSize) {
@@ -99,16 +100,24 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
                 else if(this.map.getMatrix()[x][y].ID==6){
                      matrix[y][x].setIcon(setIcon(itemSize,"/Images/barrel.png"));
                 }
+                else if(this.map.getMatrix()[x][y].ID==8){
+                     matrix[y][x].setIcon(setIcon(itemSize,"/Images/barrierBlock.png"));
+                }
+                else if(this.map.getMatrix()[x][y].ID==9){
+                     matrix[y][x].setIcon(setIcon(itemSize,"/Images/barrierBlock.png"));
+                }
             }            
         } 
         
         
         BalloonMovement b = new BalloonMovement();
-            
-            
         b.start();
-        Timer timer = new Timer();
-        timer.start();
+        
+        
+        
+        
+        this. timer=timer;
+        this.timer.start();
     }
     
     /**
@@ -128,6 +137,10 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
 
     public void setMatrix(JLabel[][] matrix) {
         this.matrix = matrix;
+    }
+
+    public Timer getTimer() {
+        return timer;
     }
 
     

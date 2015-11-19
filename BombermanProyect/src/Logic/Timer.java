@@ -14,14 +14,14 @@ import java.util.logging.Logger;
  * @author _ADRIAN_
  */
 public class Timer extends Thread{
-    int segundo,minutos;
-    
+    private int segundo,minutos;
+    private boolean timing=true;
     @Override
     public void run(){
         
         try {
 
-            while(true) {
+            while(timing) {
                 Thread.sleep(1000);
                 segundo++;
                 if(segundo>59){
@@ -32,7 +32,7 @@ public class Timer extends Thread{
                     minutos = 0;
                     
                 }
-                System.out.println(minutos+":"+segundo);
+                //System.out.println(minutos+":"+segundo);
                     
             }
 
@@ -59,6 +59,14 @@ public class Timer extends Thread{
 
     public void setMinutos(int minutos) {
         this.minutos = minutos;
+    }
+
+    public boolean isTiming() {
+        return timing;
+    }
+
+    public void setTiming(boolean timing) {
+        this.timing = timing;
     }
     
     

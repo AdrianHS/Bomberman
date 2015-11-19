@@ -30,7 +30,43 @@ public class BoomOperations extends Thread{
             int y = globals.getGraphic().heroY;
             
             Thread.sleep(3000);
-             if(globals.getLogic().getMatrix()[y][x+1].ID==3||globals.getLogic().getMatrix()[y][x+1].ID==5||globals.getLogic().getMatrix()[y][x+1].ID==6){
+            //Items
+            if(globals.getLogic().getMatrix()[y][x+1].ID==8){
+                globals.getLogic().getMatrix()[y][x+1].ID=10;
+                globals.getGraphic().matrix[x+1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/item.png"));
+            } 
+            if(globals.getLogic().getMatrix()[y][x-1].ID==8){
+                globals.getLogic().getMatrix()[y][x-1].ID=10;
+                globals.getGraphic().matrix[x-1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/item.png"));
+            } 
+            if(globals.getLogic().getMatrix()[y+1][x].ID==8){
+                globals.getLogic().getMatrix()[y+1][x].ID=10;
+                globals.getGraphic().matrix[x][y+1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/item.png"));
+            } 
+            if(globals.getLogic().getMatrix()[y-1][x].ID==8){
+                globals.getLogic().getMatrix()[y-1][x].ID=10;
+                globals.getGraphic().matrix[x][y-1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/item.png"));
+            } 
+            //Door
+            if(globals.getLogic().getMatrix()[y][x+1].ID==9){
+                globals.getLogic().getMatrix()[y][x+1].ID=11;
+                globals.getGraphic().matrix[x+1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/door.png"));
+            } 
+            if(globals.getLogic().getMatrix()[y][x-1].ID==9){
+                globals.getLogic().getMatrix()[y][x-1].ID=11;
+                globals.getGraphic().matrix[x-1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/door.png"));
+            } 
+            if(globals.getLogic().getMatrix()[y+1][x].ID==9){
+                globals.getLogic().getMatrix()[y+1][x].ID=11;
+                globals.getGraphic().matrix[x][y+1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/door.png"));
+            } 
+            if(globals.getLogic().getMatrix()[y-1][x].ID==9){
+                globals.getLogic().getMatrix()[y-1][x].ID=11;
+                globals.getGraphic().matrix[x][y-1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/door.png"));
+            } 
+            //All, enemies and blocks
+            if(globals.getLogic().getMatrix()[y][x+1].ID==3||globals.getLogic().getMatrix()[y][x+1].ID==5||globals.getLogic().getMatrix()[y][x+1].ID==6){
+            
                 globals.getGraphic().matrix[x+1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
                 
                 globals.getLogic().getMatrix()[y][x+1]=new Blank();
@@ -52,6 +88,27 @@ public class BoomOperations extends Thread{
             }
             globals.getGraphic().matrix[x][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
             globals.getLogic().getMatrix()[y][x]=new Blank();
+            
+            
+            
+            //This make sure that they are more enemies
+            boolean enemies=false;
+            for (int x1=0; x1 < globals.getLogic().getMatrix().length; x1++) {
+                for (int y1=0; y1 < globals.getLogic().getMatrix().length; y1++) {
+                           
+                    if (globals.getLogic().getMatrix()[x1][y1].ID==5||globals.getLogic().getMatrix()[x1][y1].ID==6){
+                        enemies=true;
+                            
+                    }
+                }
+            }
+            if(enemies==false){
+                globals.getLogic().getMatrix()[globals.getLogic().xDoor][globals.getLogic().yDoor].ID=12;
+                globals.getGraphic().getMatrix()[globals.getLogic().yDoor][globals.getLogic().xDoor].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/door.png"));
+                
+            }
+            
+            
         }catch(InterruptedException e){
             Logger.getLogger(null);
         }

@@ -6,6 +6,7 @@
 
 package Logic;
 
+import Graphic.End;
 import java.awt.Image;
 import java.net.URL;
 import javax.swing.ImageIcon;
@@ -26,7 +27,7 @@ public class Hero extends Element{
         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX-1].ID==2){
                 if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX].ID==7){
                     globals.getGraphic().matrix[globals.getGraphic().heroX][globals.getGraphic().heroY].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/bomb.png"));
-                }
+                }    
                 else{
                     globals.getGraphic().matrix[globals.getGraphic().heroX][globals.getGraphic().heroY].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
                     globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX]=new Blank(); 
@@ -39,6 +40,12 @@ public class Hero extends Element{
                 //globals.getLogic().printAll();
                 
         } 
+        
+        if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX-1].ID==12){
+            globals.getGraphic().dispose();
+            Graphic.End end = new End();
+            end.setVisible(true);                           
+        }
         
     }
     void moveRight(){
@@ -56,6 +63,11 @@ public class Hero extends Element{
                 globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX]=globals.getLogic().getHero();
                 //globals.getLogic().printAll();
         }
+         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX+1].ID==12){
+            globals.getGraphic().dispose();
+            Graphic.End end = new End();
+            end.setVisible(true);                           
+        }
     }
     void moveDown(){
         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY+1][globals.getGraphic().heroX].ID==2){
@@ -72,6 +84,11 @@ public class Hero extends Element{
                 globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX]=globals.getLogic().getHero();
                 //globals.getLogic().printAll();
         }
+         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY+1][globals.getGraphic().heroX].ID==12){
+            globals.getGraphic().dispose();
+            Graphic.End end = new End();
+            end.setVisible(true);                           
+        }
     }
     void moveUp(){
         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY-1][globals.getGraphic().heroX].ID==2){
@@ -87,6 +104,11 @@ public class Hero extends Element{
                 globals.getGraphic().matrix[globals.getGraphic().heroX][globals.getGraphic().heroY].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/Hero1.png"));
                 globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX]=globals.getLogic().getHero();
                 //globals.getLogic().printAll();
+        }
+         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY-1 ][globals.getGraphic().heroX].ID==12){
+            globals.getGraphic().dispose();
+            Graphic.End end = new End();
+            end.setVisible(true);                           
         }
     }
     

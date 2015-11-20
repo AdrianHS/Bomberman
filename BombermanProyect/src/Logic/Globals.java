@@ -14,8 +14,14 @@ import javax.swing.JPanel;
  *
  * @author _ADRIAN_
  */
+
+/**
+*Create Singlentone
+*/
 public class Globals {
-    
+    /**
+    *Initializing variables
+    */
     private MapCreator logic;
     private GraphicMatrix graphic;
     
@@ -47,7 +53,9 @@ public class Globals {
     
     private Globals() {
     }
-    
+    /**
+    *Create the Instance
+    */
     public static Globals getInstance(){
         if(instance == null){
             instance = new Globals();
@@ -81,7 +89,9 @@ public class Globals {
         }
         return instance;
     }
-
+    /**
+    *The set and get
+    */
     public MapCreator getLogic() {
         return instance.logic;
     }
@@ -98,8 +108,6 @@ public class Globals {
         instance.graphic = graphic;
     }
 
- 
-    
     public JPanel getPanel() {
         return instance.panel;
     }

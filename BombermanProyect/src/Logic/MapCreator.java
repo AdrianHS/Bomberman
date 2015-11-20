@@ -25,9 +25,9 @@ public class MapCreator {
    
     public MapCreator() {
     }
-    
-    
-    
+    /**
+    * Create the Logic Matrix
+    */
     public void LogicMatrix(int size, int blocQ,int balloons,int barrels,int items){ 
         this.size=size;
         matrix = new Element[size][size];
@@ -36,8 +36,7 @@ public class MapCreator {
         * Fill all in SolidBlocs
         */
         for (int x=0; x < size; x++) {
-            for (int y=0; y < size; y++) {
-                //System.out.println (matriz[x][y]);             
+            for (int y=0; y < size; y++) {            
                 
                 matrix[x][y] = bloc;
                 
@@ -46,8 +45,6 @@ public class MapCreator {
                     matrix[x][y]=blank;
                 }
             }
-            
-            
         }
         /**
         * Put the Blanks
@@ -58,7 +55,6 @@ public class MapCreator {
             matrix[x][0]=bloc;
             matrix[x][size-1]=bloc;
         }
-        
         /**
         * Space for boomberman
         */
@@ -77,13 +73,10 @@ public class MapCreator {
             Random r2 = new Random();
             int q = r1.nextInt(size);
             int w = r2.nextInt(size);
-            //System.out.println(q+" "+w+" "+cantBuffs);
-            
-            
+
             if(matrix[q][w].ID == 2 && matrix[q][w].ID != -1){
                 BarrierBloc b = new BarrierBloc();
                 matrix[q][w]= b;
-                
                 
                 if(cantBuffs!=0){
                     b.ID=8;
@@ -96,9 +89,7 @@ public class MapCreator {
                     this.yDoor=w;
                 }
                 cont--; 
-            
                 }                   
-            
         }
         
         /**
@@ -109,16 +100,12 @@ public class MapCreator {
             Random r2 = new Random();
             int q = r1.nextInt(size);
             int w = r2.nextInt(size);
-            //System.out.println(q+" "+w);
-            
-            
+
             if(matrix[q][w].ID == 2 && matrix[q][w].ID != -1){
                 
                 matrix[q][w]= new EnemyBalloon();
                 cont--; 
-            
-                }                   
-            
+            }                    
         }
         /**
         * Put the barrels
@@ -128,19 +115,15 @@ public class MapCreator {
             Random r2 = new Random();
             int q = r1.nextInt(size);
             int w = r2.nextInt(size);
-            //System.out.println(q+" "+w);
-            
-            
+
             if(matrix[q][w].ID == 2 && matrix[q][w].ID != -1){
                 
                 matrix[q][w]= new EnemyBarrel();
                 cont--; 
             
                 }                   
-            
         }
 
-        
         matrix[1][1].ID = 2;
         matrix[1][2].ID = 2;
         matrix[2][1].ID = 2;
@@ -149,9 +132,6 @@ public class MapCreator {
         * Hero on his place
         */
         matrix[1][1] = hero;
-        
-       
-        
         
         printAll();
         
@@ -167,7 +147,9 @@ public class MapCreator {
         }
         System.out.println(asd); 
     }   
-
+    /**
+    *Set and Get class
+    */
     public Element[][] getMatrix() {
         return matrix;
     }
@@ -179,10 +161,11 @@ public class MapCreator {
     public Hero getHero() {
         return hero;
     }
-    
-    
+
     public void printAll(){
-        //Print all
+        /**
+        *Print in console
+        */        
         for(int x =0;x<size;x++){
             for(int y =0;y<size;y++){
                 if (matrix[x][y].ID==1){
@@ -214,8 +197,7 @@ public class MapCreator {
                 }
             }       
             System.out.println("\n");
-            
-            
+
         }
     }
         

@@ -10,9 +10,15 @@ package Logic;
  *
  * @author _ADRIAN_
  */
+/**
+*Main elements class or super class
+*/
 public class Element {
     int ID;
     
+    /**
+    *The set and get
+    */
     public Element(int ID) {   
         this.ID = ID;
     }

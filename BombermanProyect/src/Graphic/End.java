@@ -6,16 +6,12 @@
 
 package Graphic;
 
+/**
+* Imported libraries
+*/
 import Logic.Globals;
 import Logic.FileWR;
 import Logic.Sound;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 /**
@@ -29,6 +25,7 @@ public class End extends javax.swing.JFrame {
      * @param x
      */
     public End(int x) {
+        //Sound if hero win
         if (x==1){
             setLocationRelativeTo(null);
             setResizable(false);
@@ -42,6 +39,7 @@ public class End extends javax.swing.JFrame {
             Sound s = new Sound();
             s.win();
             }
+        //Sound if hero loser
         if (x==2){
             setLocationRelativeTo(null);
             setResizable(false);
@@ -164,7 +162,9 @@ public class End extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+    *saved files
+    */
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
         
         String name = texWrite.getText();
@@ -173,28 +173,28 @@ public class End extends javax.swing.JFrame {
         String l = "\n";
         FileWR newFile = new FileWR(); 
         
-        newFile.crear(name, m, s, l);
+        newFile.createFile(name, m, s, l);
         texWrite.setText("");
         btnAccept.setEnabled(false);
-        
-        
-    }//GEN-LAST:event_btnAcceptActionPerformed
 
+    }//GEN-LAST:event_btnAcceptActionPerformed
+    
+    /**
+    *Standings shows
+    */
     private void btnPositionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPositionsActionPerformed
         jTextArea1.removeAll();
         FileWR newFile = new FileWR();
         if(globals.getLogic().getMatrix().length==15){
-            newFile.leer("SocoresEasy.txt");
+            newFile.readFile("SocoresEasy.txt");
         }
         else if(globals.getLogic().getMatrix().length==21){
-            newFile.leer("SocoresMedium.txt");
+            newFile.readFile("SocoresMedium.txt");
         }
         else if(globals.getLogic().getMatrix().length==25){
-            newFile.leer("SocoresDifficul.txt");
+            newFile.readFile("SocoresDifficul.txt");
         }
-        
-        
-        
+ 
     }//GEN-LAST:event_btnPositionsActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

@@ -10,6 +10,10 @@ package Logic;
  *
  * @author _ADRIAN_
  */
+
+/**
+*Creates instances of the game
+*/
 public class Factory implements InterfaceGame{
 
     @Override
@@ -23,8 +27,7 @@ public class Factory implements InterfaceGame{
             
         }
         else if(size ==25){
-            Game game = new Game(size,block,balloons,barrels,itemSize,items);
-            
+            Game game = new Game(size,block,balloons,barrels,itemSize,items);    
         }
         return null;
     }

@@ -10,12 +10,14 @@ package Logic;
  *
  * @author _ADRIAN_
  */
+public class OurException extends Exception{
 
-/**
-*The abstract method is created
-*/
-public interface InterfaceGame {
+    public OurException() {
+        super("Error");
+    }
+    public OurException(String msg) {
+        super(msg);
+    }
     
-    public Game createGame(int size, int block, int balloons, int barrels, int itemSize,int items);
- 
+    
 }

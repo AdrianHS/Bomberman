@@ -5,6 +5,9 @@
  */
 package Logic;
 
+/**
+* Imported libraries
+*/
 import Graphic.End;
 import java.awt.Image;
 import java.net.URL;
@@ -26,13 +29,10 @@ public class BalloonMovement extends Thread {
     */
     @Override
     public void run(){
-       
-        
+
         try {
-            
             while(stopable){
                 Thread.sleep(1000);
-                
                 for (int x = 0; x < globals.getLogic().getMatrix().length; x++) {
                         for (int y = 0; y < globals.getLogic().getMatrix().length; y++) {
                             if(globals.getLogic().getMatrix()[x][y].ID==5){
@@ -91,8 +91,7 @@ public class BalloonMovement extends Thread {
                                     }
                                 
                                 }
-                                
-                                
+ 
                             }
 
                         }
@@ -101,11 +100,9 @@ public class BalloonMovement extends Thread {
             } catch (InterruptedException e) {
                 Logger.getLogger(null);
         }
-            
-        
+   
     }
-       
-        
+
     public ImageIcon setIcon(int scale,String direction){
     URL url = getClass().getResource(direction);
     ImageIcon icon = new ImageIcon(url);

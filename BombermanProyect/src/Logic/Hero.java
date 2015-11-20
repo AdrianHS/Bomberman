@@ -23,6 +23,9 @@ public class Hero extends Element{
        
     }
     
+    /**
+    *método para mover left
+    */
     void moveLeft(){
         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX-1].ID==2){
                 if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX].ID==7){
@@ -54,6 +57,9 @@ public class Hero extends Element{
         }
         
     }
+    /**
+    *método para mover right
+    */
     void moveRight(){
         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX+1].ID==2){
                 if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX].ID==7){
@@ -81,6 +87,9 @@ public class Hero extends Element{
             end.setVisible(true);                           
         }
     }
+    /**
+    *método para mover down
+    */
     void moveDown(){
         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY+1][globals.getGraphic().heroX].ID==2){
                 if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX].ID==7){
@@ -108,6 +117,9 @@ public class Hero extends Element{
             end.setVisible(true);                           
         }
     }
+    /**
+    *método para mover up
+    */
     void moveUp(){
         if(globals.getLogic().getMatrix()[globals.getGraphic().heroY-1][globals.getGraphic().heroX].ID==2){
                 if(globals.getLogic().getMatrix()[globals.getGraphic().heroY][globals.getGraphic().heroX].ID==7){

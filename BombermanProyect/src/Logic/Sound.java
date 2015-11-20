@@ -40,10 +40,6 @@ public class Sound {
         player = java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Die.mid"));
         player.play();
     }
-   
-    
-     
-    
 
     /**
     * To stop the sound

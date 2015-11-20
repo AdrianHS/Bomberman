@@ -11,9 +11,6 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.net.URL;
-import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -37,15 +34,13 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         
         this.itemSize=itemSize;
         this.map=map;
-        
-        
+
         addKeyListener(this);
         
         this.pack();
         this.panel = new JPanel();
         this.panel.setLayout(new GridBagLayout());
         this.gbc=new GridBagConstraints();
-        
         
        /**
         * Cycles to create the array
@@ -110,10 +105,7 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
                 }
             }            
         } 
-        
-        
-        
-        
+
         b.start();
         barrelM.start(); 
 
@@ -144,7 +136,6 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         return timer;
     }
 
-    
     /**
     * To capture keystrokes
     */
@@ -156,8 +147,6 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     int heroY =1;
     @Override
     public void keyPressed(KeyEvent ke) {
-        
-        //System.out.println(ke.getKeyCode());
         
         //Space
         if(ke.getKeyCode()==32)    
@@ -171,16 +160,6 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
             map.getMatrix()[heroY][heroX] = bomb;           
             BoomOperations t = new BoomOperations();
             t.start();
-            
-            //matrix[Q][W].setIcon(setIcon(itemSize,"/Images/emptyBlock.png"));
-            //map.getMatrix()[W][Q]=new Blank();
-            
-            
-            
-            //This moves the balloons......
-            /*
-            
-            */
 
         }
         
@@ -208,9 +187,6 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         
     }
 
-  
-     
-    
     
     @Override
     public void keyReleased(KeyEvent ke) {

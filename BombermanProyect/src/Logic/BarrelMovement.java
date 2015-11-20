@@ -5,6 +5,9 @@
  */
 package Logic;
 
+/**
+* Imported libraries
+*/
 import Graphic.End;
 import java.awt.Image;
 import java.net.URL;
@@ -20,10 +23,8 @@ public class BarrelMovement extends Thread{
     boolean stopable= true;
     @Override
     public void run(){
-        
-        
+
         try {
-            
             while(stopable){
                 Thread.sleep(1500);
                 
@@ -186,7 +187,6 @@ public class BarrelMovement extends Thread{
         }
         
     }
-    
      public ImageIcon setIcon(int scale,String direction){
     URL url = getClass().getResource(direction);
     ImageIcon icon = new ImageIcon(url);

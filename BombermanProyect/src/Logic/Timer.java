@@ -31,17 +31,12 @@ public class Timer extends Thread{
                 if(minutos>59){
                     minutos = 0;
                     
-                }
-                //System.out.println(minutos+":"+segundo);
-                    
+                }    
             }
-
-
-            
+  
         } 
         catch (InterruptedException ex) {
-            Logger.getLogger(Timer.class.getName()).log(Level.SEVERE, null, ex);
-        
+            Logger.getLogger(Timer.class.getName()).log(Level.SEVERE, null, ex);  
         }  
     } 
 

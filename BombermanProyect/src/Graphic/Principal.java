@@ -6,6 +6,9 @@
 
 package Graphic;
 
+/**
+* Imported libraries
+*/
 import Logic.Factory;
 import Logic.Globals;
 import javax.swing.ImageIcon;
@@ -111,21 +114,27 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /*
+    *Create the matrix Easy
+    */
     private void btnEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEasyActionPerformed
         factory.createGame(globals.getMatrizSizeEasy(),
                 globals.getBarrierBlockEasy(), globals.getBalloonsEasy(), 
                 globals.getBarrelsEasy(), globals.getItemSizeEasy(),globals.getItemsEasy());
         this.setVisible(false);
     }//GEN-LAST:event_btnEasyActionPerformed
-
+    /*
+    *Create the matrix Medium
+    */
     private void btnIntermediateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIntermediateActionPerformed
         factory.createGame(globals.getMatrizSizeIntermediate(), 
                 globals.getBarrierBlockIntermediate(), globals.getBalloonsIntermediate(),
                 globals.getBarrelsIntermediate(), globals.getItemSizeIntermediate(),globals.getItemsIntermediate());
         this.setVisible(false);
     }//GEN-LAST:event_btnIntermediateActionPerformed
-
+    /*
+    *Create the matrix Diffiul
+    */
     private void btnDifficultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDifficultActionPerformed
         factory.createGame(globals.getMatrizSizeDifficult(),
                 globals.getBarrierBlockDifficult(), globals.getBalloonsDifficult(), 

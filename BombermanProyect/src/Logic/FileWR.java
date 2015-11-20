@@ -7,7 +7,9 @@
 package Logic;
 
 
-
+/**
+* Imported libraries
+*/
 
 import static Graphic.End.jTextArea1;
 import java.io.BufferedReader;
@@ -18,16 +20,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
-
-
 /**
  *
  * @author _ADRIAN_
  */
 public class FileWR {
     Globals globals = Globals.getInstance();
-    public void crear(String name,String min,String seg, String l){
+    /**
+    *Method to write files
+    */
+    public void createFile(String name,String min,String seg, String l){
         File f;
         if(globals.getLogic().getMatrix().length==15){
             f = new File("SocoresEasy.txt");
@@ -46,9 +48,7 @@ public class FileWR {
                     bw.write(name+" "+min+":"+seg+l);
                     bw.close();
                 }    
-
-
-            }catch(IOException e){System.out.println("Error: "+e.getMessage());};
+            }catch(IOException e){System.out.println("ErrorE: "+e.getMessage());};
         
         }
         else if(globals.getLogic().getMatrix().length==21){
@@ -68,9 +68,7 @@ public class FileWR {
                     bw.write(name+" "+min+":"+seg+l);
                     bw.close();
                 }    
-
-
-            }catch(IOException e){System.out.println("Error: "+e.getMessage());};
+            }catch(IOException e){System.out.println("ErrorM: "+e.getMessage());};
         
         }
         else if(globals.getLogic().getMatrix().length==25){
@@ -90,14 +88,14 @@ public class FileWR {
                     bw.write(name+" "+min+":"+seg+l);
                     bw.close();
                 }    
-
-
-            }catch(IOException e){System.out.println("Error: "+e.getMessage());};
+            }catch(IOException e){System.out.println("ErrorD: "+e.getMessage());};
         
         }
     }
-
-    public void leer(String name){
+    /**
+    *Method to read files
+    */
+    public void readFile(String name){
         File archivos;
         FileReader fr;
         BufferedReader br;
@@ -109,14 +107,14 @@ public class FileWR {
             while((linea=br.readLine())!=null){
                 jTextArea1.append(linea+ "\n");
                 
-                //System.out.println(linea);
             }
             
             br.close();
             fr.close();
         } catch (Exception ex2) {
-                System.out.println("Mensaje 2: " + ex2.getMessage());
+            System.out.println(ex2.getMessage());
         }
+        
         
     }
 }

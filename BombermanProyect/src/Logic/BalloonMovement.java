@@ -42,26 +42,25 @@ public class BalloonMovement extends Thread {
                                 
                                 if(mov==0 && globals.getLogic().getMatrix()[x][y-1].ID==4){
                                     globals.getGraphic().dispose();
-                                    Graphic.End end = new End();
+                                    Graphic.End end = new End(2);
                                     end.setVisible(true);
                                     stopable=false;
-                                    
                                 }
                                 else if(mov==1 && globals.getLogic().getMatrix()[x][y+1].ID==4){
                                    globals.getGraphic().dispose();
-                                   Graphic.End end = new End();
+                                   Graphic.End end = new End(2);
                                     end.setVisible(true);
                                     stopable=false;
                                 }
                                 else if(mov==2 && globals.getLogic().getMatrix()[x-1][y].ID==4){
                                    globals.getGraphic().dispose();
-                                   Graphic.End end = new End();
+                                   Graphic.End end = new End(2);
                                    end.setVisible(true);
                                    stopable=false;
                                 }
                                 else if(mov==3 && globals.getLogic().getMatrix()[x+1][y].ID==4){
                                     globals.getGraphic().dispose();
-                                    Graphic.End end = new End();
+                                    Graphic.End end = new End(2);
                                     end.setVisible(true);
                                     stopable=false;
                                 }

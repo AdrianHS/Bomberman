@@ -28,9 +28,22 @@ public class Sound {
         //player.play();
     }
     public void boom(){
-        player = java.applet.Applet.newAudioClip(getClass().getResource("/sonido/bom.wav"));
+        player = java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Boom.wav"));
         player.play();
     }
+    
+    public void win(){
+        player = java.applet.Applet.newAudioClip(getClass().getResource("/Sound/winer.wav"));
+        player.play();
+    }
+    public void loser(){
+        player = java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Die.mid"));
+        player.play();
+    }
+   
+    
+     
+    
 
     /**
     * To stop the sound

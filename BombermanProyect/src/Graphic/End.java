@@ -8,6 +8,7 @@ package Graphic;
 
 import Logic.Globals;
 import Logic.FileWR;
+import Logic.Sound;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -25,17 +26,36 @@ public class End extends javax.swing.JFrame {
     Logic.Globals globals = Globals.getInstance();
     /**
      * Creates new form Final
+     * @param x
      */
-    public End() {
-        setLocationRelativeTo(null);
-        setResizable(false);
-        setTitle("Bomberman");
-        setIconImage(new ImageIcon(getClass().getResource("/Images/Hero2.png")).getImage());
-        initComponents();
-        globals.getGraphic().getTimer().setTiming(false);
-        int min = globals.getGraphic().getTimer().getMinutos();
-        int seg = globals.getGraphic().getTimer().getSegundo();
-        time.setText(min+":"+seg);
+    public End(int x) {
+        if (x==1){
+            setLocationRelativeTo(null);
+            setResizable(false);
+            setTitle("Bomberman");
+            setIconImage(new ImageIcon(getClass().getResource("/Images/Hero2.png")).getImage());
+            initComponents();
+            globals.getGraphic().getTimer().setTiming(false);
+            int min = globals.getGraphic().getTimer().getMinutos();
+            int seg = globals.getGraphic().getTimer().getSegundo();
+            time.setText(min+":"+seg);
+            Sound s = new Sound();
+            s.win();
+            }
+        if (x==2){
+            setLocationRelativeTo(null);
+            setResizable(false);
+            setTitle("Bomberman");
+            setIconImage(new ImageIcon(getClass().getResource("/Images/Hero2.png")).getImage());
+            initComponents();
+            globals.getGraphic().getTimer().setTiming(false);
+            int min = globals.getGraphic().getTimer().getMinutos();
+            int seg = globals.getGraphic().getTimer().getSegundo();
+            time.setText(min+":"+seg);
+            btnAccept.setEnabled(false);
+            Sound s = new Sound();
+            s.loser();
+            }
     }
 
     /**
@@ -213,7 +233,7 @@ public class End extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new End().setVisible(true);
+                new End(1).setVisible(true);
             }
         });
     }

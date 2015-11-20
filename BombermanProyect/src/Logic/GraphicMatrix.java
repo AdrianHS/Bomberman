@@ -29,6 +29,7 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
     MapCreator map;
     Timer timer = new Timer();;
     BalloonMovement b = new BalloonMovement();
+    BarrelMovement barrelM = new BarrelMovement();
     
     
     public GraphicMatrix(MapCreator map,int size,int itemSize) {
@@ -112,11 +113,10 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         
         
         
+        
         b.start();
-        
-        
-        
-        
+        barrelM.start(); 
+
         this. timer=timer;
         this.timer.start();
     }
@@ -166,8 +166,7 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
             matrix[heroX][heroY].setIcon(setIcon(itemSize,"/Images/BombAndHero1.png"));
             matrix[heroX][heroY].setIcon(setIcon(itemSize,"/Images/BombAndHero1.png"));
             
-            //Sound s = new Sound();
-            //s.boom();
+            
             
             map.getMatrix()[heroY][heroX] = bomb;           
             BoomOperations t = new BoomOperations();
@@ -189,19 +188,17 @@ public class GraphicMatrix extends javax.swing.JFrame implements KeyListener{
         if(ke.getKeyCode()==37)
         {
             globals.getLogic().getHero().moveLeft();
-                
-            
+    
         }
         // Move Down
         if(ke.getKeyCode()==40)
         {
-            globals.getLogic().getHero().moveDown();
+            globals.getLogic().getHero().moveDown();   
         }
         // Move Rigth
         if(ke.getKeyCode()==39)
         {
-            globals.getLogic().getHero().moveRight();
-            
+            globals.getLogic().getHero().moveRight();  
         }
         // Move up
         if(ke.getKeyCode()==38)

@@ -19,6 +19,7 @@ import javax.swing.ImageIcon;
  */
 public class BoomOperations extends Thread{
     Globals globals = Globals.getInstance();
+    Sound s = new Sound();
     public BoomOperations() {
     }
     /**
@@ -37,39 +38,41 @@ public class BoomOperations extends Thread{
             //Makes sure if the hero its on the bomb.
             if(globals.getGraphic().heroX==x&&globals.getGraphic().heroY==y){
                 globals.getGraphic().dispose();
-                Graphic.End end = new End();
+                Graphic.End end = new End(2);
                 end.setVisible(true);
                 globals.getGraphic().b.stopable=false;
+                
             }
             
             
             //If hits the hero.
-            if(globals.getLogic().getMatrix()[y][x+1].ID==4){
+            else if(globals.getLogic().getMatrix()[y][x+1].ID==4){
                 globals.getGraphic().dispose();
-                Graphic.End end = new End();
+                Graphic.End end = new End(2);
                 end.setVisible(true);
                 globals.getGraphic().b.stopable=false;
             } 
             else if(globals.getLogic().getMatrix()[y][x-1].ID==4){
                 globals.getGraphic().dispose();
-                Graphic.End end = new End();
+                Graphic.End end = new End(2);
                 end.setVisible(true);
                 globals.getGraphic().b.stopable=false;
             } 
             else if(globals.getLogic().getMatrix()[y+1][x].ID==4){
                 globals.getGraphic().dispose();
-                Graphic.End end = new End();
+                Graphic.End end = new End(2);
                 end.setVisible(true);
                 globals.getGraphic().b.stopable=false;
             } 
             else if(globals.getLogic().getMatrix()[y-1][x].ID==4){
                 globals.getGraphic().dispose();
-                Graphic.End end = new End();
+                Graphic.End end = new End(2);
                 end.setVisible(true);
                 globals.getGraphic().b.stopable=false;
             } 
   
             
+            s.boom();
             //Fire Efect
             if(globals.getLogic().getMatrix()[y][x+1].ID!=1&&globals.getLogic().getMatrix()[y][x+1].ID!=7&&globals.getLogic().getMatrix()[y][x+1].ID!=8&&globals.getLogic().getMatrix()[y][x+1].ID!=9&&globals.getLogic().getMatrix()[y][x+1].ID!=10&&globals.getLogic().getMatrix()[y][x+1].ID!=11&&globals.getLogic().getMatrix()[y][x+1].ID!=12){
                 globals.getGraphic().matrix[x+1][y].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/fire1.png"));
@@ -104,6 +107,7 @@ public class BoomOperations extends Thread{
                 globals.getGraphic().matrix[x][y-1].setIcon(setIcon(globals.getGraphic().itemSize,"/Images/emptyBlock.png"));
                 
             } 
+            
             
             //Items
             if(globals.getLogic().getMatrix()[y][x+1].ID==8){
@@ -180,6 +184,7 @@ public class BoomOperations extends Thread{
                 
             }
             
+        
             
         }catch(InterruptedException e){
             Logger.getLogger(null);
